@@ -12,9 +12,15 @@ class RoleModel extends Model
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
+<<<<<<< HEAD
+    protected $useSoftDeletes = false;
+
+    protected $allowedFields = ['nombre', 'apellido', 'email', 'contrasena', 'dni', 'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_rol'];
+=======
     protected $useSoftDeletes = true;
 
     protected $allowedFields = ['rol'];
+>>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
 
     // Dates
     protected $useTimestamps = false;
@@ -39,4 +45,8 @@ class RoleModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
