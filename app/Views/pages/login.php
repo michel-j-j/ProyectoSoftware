@@ -107,7 +107,7 @@
 							</div>
 
 							<div class="col-6 text-end">
-								<button class="btn btn-link px-0" type="button">Te olvidaste tu contraseña?</button>
+								<button class="btn btn-link px-0" type="button">Te olvidaste la contraseña?</button>
 							</div>
 						</div>
 					</div>

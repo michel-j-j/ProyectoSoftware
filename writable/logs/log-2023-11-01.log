@@ -545,3 +545,413 @@ in SYSTEMPATH\Database\BaseConnection.php on line 646.
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 INFO - 2023-11-01 19:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-01 19:16:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 20:21:45 --> syntax error, unexpected token "<<", expecting "]"
+in APPPATH\Config\Database.php on line 31.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Config\\Database.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('Config\\Database')
+ 3 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(255): CodeIgniter\Autoloader\Autoloader->loadClass('Config\\Database')
+ 4 SYSTEMPATH\Debug\Toolbar\Collectors\Database.php(71): CodeIgniter\Debug\Toolbar\Collectors\Database->getConnections()
+ 5 SYSTEMPATH\Debug\Toolbar.php(65): CodeIgniter\Debug\Toolbar\Collectors\Database->__construct()
+ 6 SYSTEMPATH\Config\Services.php(778): CodeIgniter\Debug\Toolbar->__construct(Object(Config\Toolbar))
+ 7 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::toolbar(Object(Config\Toolbar), false)
+ 8 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('toolbar', [...])
+ 9 SYSTEMPATH\Config\Services.php(773): CodeIgniter\Config\BaseService::getSharedInstance('toolbar', null)
+10 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::toolbar()
+11 APPPATH\Config\Events.php(47): CodeIgniter\Config\BaseService::__callStatic('toolbar', [])
+12 SYSTEMPATH\Events\Events.php(152): CodeIgniter\Events\Events::Config\{closure}()
+13 SYSTEMPATH\CodeIgniter.php(434): CodeIgniter\Events\Events::trigger('pre_system')
+14 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 20:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 20:23:20 --> syntax error, unexpected token "<<", expecting "function" or "const"
+in APPPATH\Models\UserModel.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Models\\UserModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserModel')
+ 3 APPPATH\Controllers\LoginController.php(31): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserModel')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 20:23:22 --> syntax error, unexpected token "<<", expecting "function" or "const"
+in APPPATH\Models\UserModel.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Models\\UserModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserModel')
+ 3 APPPATH\Controllers\LoginController.php(31): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserModel')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 20:23:24 --> syntax error, unexpected token "<<", expecting "function" or "const"
+in APPPATH\Models\UserModel.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Models\\UserModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserModel')
+ 3 APPPATH\Controllers\LoginController.php(31): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserModel')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 20:23:30 --> syntax error, unexpected token "<<", expecting "function" or "const"
+in APPPATH\Models\UserModel.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Models\\UserModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\UserModel')
+ 3 APPPATH\Controllers\LoginController.php(31): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\UserModel')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-01 20:27:47 --> mysqli_sql_exception: Unknown column 'usuario.id' in 'where clause' in C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\BaseModel.php(563): CodeIgniter\Model->doFind(true, '1')
+#6 C:\xampp\htdocs\proyecto\ProyectoSoftware\app\Controllers\EntidadController.php(112): CodeIgniter\BaseModel->find('1')
+#7 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+#8 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+#9 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto\ProyectoSoftware\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-11-01 20:27:47 --> Unknown column 'usuario.id' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `usuario`.`id` = :usuario.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(563): CodeIgniter\Model->doFind(true, '1')
+ 4 APPPATH\Controllers\EntidadController.php(112): CodeIgniter\BaseModel->find('1')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 21:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-01 21:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-01 21:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 21:14:19 --> syntax error, unexpected token "<<"
+in APPPATH\Controllers\UserController.php on line 41.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Controllers\\UserController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UserController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UserController')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\UserController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 21:50:07 --> Undefined array key "id"
+in APPPATH\Views\tables\userTable.php on line 110.
+ 1 APPPATH\Views\tables\userTable.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\tables\\userTable.php', 110)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\tables\\userTable.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('tables/userTable', [], true)
+ 5 APPPATH\Controllers\UserController.php(84): view('tables/userTable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->userList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 21:52:03 --> Undefined array key "id"
+in APPPATH\Views\tables\userTable.php on line 101.
+ 1 APPPATH\Views\tables\userTable.php(101): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\tables\\userTable.php', 101)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\tables\\userTable.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('tables/userTable', [], true)
+ 5 APPPATH\Controllers\UserController.php(84): view('tables/userTable', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->userList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 21:57:41 --> Undefined array key "id"
+in APPPATH\Views\forms\editarUsuario.php on line 89.
+ 1 APPPATH\Views\forms\editarUsuario.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\forms\\editarUsuario.php', 89)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\forms\\editarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('forms/editarUsuario', [], true)
+ 5 APPPATH\Controllers\UserController.php(77): view('forms/editarUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('2')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-01 21:58:47 --> mysqli_sql_exception: Unknown column 'usuario.id_usuario' in 'where clause' in C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\BaseModel.php(563): CodeIgniter\Model->doFind(true, '2')
+#6 C:\xampp\htdocs\proyecto\ProyectoSoftware\app\Controllers\UserController.php(50): CodeIgniter\BaseModel->find('2')
+#7 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('2')
+#8 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyecto\ProyectoSoftware\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-11-01 21:58:47 --> Unknown column 'usuario.id_usuario' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `usuario`.`id_usuario` = :usuario.id_usuario:', [...], false)
+ 2 SYSTEMPATH\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(563): CodeIgniter\Model->doFind(true, '2')
+ 4 APPPATH\Controllers\UserController.php(50): CodeIgniter\BaseModel->find('2')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('2')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-01 22:04:48 --> mysqli_sql_exception: Unknown column 'id' in 'field list' in C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`\nFRO...', 0)
+#1 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`\nFRO...')
+#2 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`\nFRO...')
+#3 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseBuilder.php(1748): CodeIgniter\Database\BaseConnection->query('SELECT `id`\nFRO...', Array, false)
+#4 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Model.php(871): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\proyecto\ProyectoSoftware\app\Controllers\UserController.php(56): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('$1')
+#7 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyecto\ProyectoSoftware\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-01 22:04:48 --> Unknown column 'id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1748): CodeIgniter\Database\BaseConnection->query('SELECT `id`
+FROM `rol`
+WHERE `rol` = :rol:', [...], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 3 APPPATH\Controllers\UserController.php(56): CodeIgniter\Model->__call('getWhere', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('$1')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-01 22:09:30 --> mysqli_sql_exception: Unknown column 'id' in 'field list' in C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`\nFRO...', 0)
+#1 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`\nFRO...')
+#2 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`\nFRO...')
+#3 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseBuilder.php(1748): CodeIgniter\Database\BaseConnection->query('SELECT `id`\nFRO...', Array, false)
+#4 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Model.php(871): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\proyecto\ProyectoSoftware\app\Controllers\UserController.php(56): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('$1')
+#7 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\proyecto\ProyectoSoftware\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-01 22:09:30 --> Unknown column 'id' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1748): CodeIgniter\Database\BaseConnection->query('SELECT `id`
+FROM `rol`
+WHERE `rol` = :rol:', [...], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->getWhere([...])
+ 3 APPPATH\Controllers\UserController.php(56): CodeIgniter\Model->__call('getWhere', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('$1')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-01 22:13:23 --> mysqli_sql_exception: Unknown column 'contrasena' in 'field list' in C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `usuario...', 0)
+#1 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `usuario...')
+#2 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `usuario...')
+#3 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `usuario...', Array, false)
+#4 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\BaseModel.php(949): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\Model.php(776): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\proyecto\ProyectoSoftware\app\Controllers\UserController.php(71): CodeIgniter\Model->update('2', Array)
+#8 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('$1')
+#9 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#10 C:\xampp\htdocs\proyecto\ProyectoSoftware\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyecto\ProyectoSoftware\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-01 22:13:23 --> Unknown column 'contrasena' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2475): CodeIgniter\Database\BaseConnection->query('UPDATE `usuario` SET `nombre` = :nombre:, `apellido` = :apellido:, `email` = :email:, `contrasena` = :contrasena:, `dni` = :dni:, `fecha_nacimiento` = :fecha_nacimiento:, `localidad` = :localidad:, `direccion` = :direccion:, `nacionalidad` = :nacionalidad:, `id_rol` = :id_rol:
+WHERE `usuario`.`id` IN :usuario.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(385): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\UserController.php(71): CodeIgniter\Model->update('2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->modificarUsuario('$1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 22:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 22:34:07 --> Undefined array key "id_entidad"
+in APPPATH\Views\entities\entitiesList.php on line 40.
+ 1 APPPATH\Views\entities\entitiesList.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_entidad"', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 40)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(119): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 22:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 22:35:30 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 46.
+ 1 APPPATH\Views\entities\entitiesList.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(119): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 22:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 22:37:32 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 46.
+ 1 APPPATH\Views\entities\entitiesList.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(119): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 22:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 22:37:34 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 46.
+ 1 APPPATH\Views\entities\entitiesList.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(119): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 22:45:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 22:45:33 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 46.
+ 1 APPPATH\Views\entities\entitiesList.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(119): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 22:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 22:54:32 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 46.
+ 1 APPPATH\Views\entities\entitiesList.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 46)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(121): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:04:37 --> Undefined variable $data
+in APPPATH\Views\entities\entitiesList.php on line 22.
+ 1 APPPATH\Views\entities\entitiesList.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 22)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:04:56 --> Undefined variable $encargado
+in APPPATH\Views\entities\entitiesList.php on line 22.
+ 1 APPPATH\Views\entities\entitiesList.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $encargado', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 22)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-01 23:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:05:55 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 47.
+ 1 APPPATH\Views\entities\entitiesList.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 47)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:06:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-01 23:07:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-01 23:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:07:29 --> Undefined array key "encargado -> nombre"
+in APPPATH\Views\entities\entitiesList.php on line 48.
+ 1 APPPATH\Views\entities\entitiesList.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "encargado -> nombre"', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 48)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:07:58 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 48.
+ 1 APPPATH\Views\entities\entitiesList.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 48)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:08:00 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 48.
+ 1 APPPATH\Views\entities\entitiesList.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 48)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:08:59 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 48.
+ 1 APPPATH\Views\entities\entitiesList.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 48)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:13:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:13:53 --> Undefined variable $entidad
+in APPPATH\Views\entities\entitiesList.php on line 40.
+ 1 APPPATH\Views\entities\entitiesList.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $entidad', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 40)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-01 23:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-01 23:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 23:16:10 --> Trying to access array offset on value of type null
+in APPPATH\Views\entities\entitiesList.php on line 49.
+ 1 APPPATH\Views\entities\entitiesList.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php', 49)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Views\\entities\\entitiesList.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('entities/entitiesList', [], true)
+ 5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

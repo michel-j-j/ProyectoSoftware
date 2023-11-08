@@ -41,7 +41,7 @@
                         <label for="id_usuario" class="form-label">Representante</label>
                         <select class="form-select" id="validationDefault04" name="id_usuario" required>
                             <?php foreach ($representantes as $representante) { ?>
-                                <option value="<?php echo $representante['id_usuario']; ?>"><?php echo $representante['nombre']; ?></option>
+                                <option value="<?php echo $representante['id']; ?>"><?php echo $representante['nombre']; ?></option>
                                 <!-- traer tambien los datos de los usuarios que pueden ser representantes -->
                             <?php } ?>
                         </select>
@@ -54,7 +54,7 @@
                             </label>
                         </div>
                     </div>
-                    <input type="hidden" name="id" id="id" value="<?php echo $entidad['id_entidad']; ?>" <div class="col-12">
+                    <input type="hidden" name="id" id="id" value="<?php echo $entidad['id']; ?>" <div class="col-12">
                     <button class="btn btn-primary" type="submit">Guardar Cambios</button>
 
                 </form>

@@ -7,17 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 
-
-
-
-
-
-
-
-
-
 //Get request ENTIDAD
-$routes->get('/', 'Home::index');
+$routes->get('/', 'ControladorPrincipal::index');
 //Creacion de entidades
 $routes->get('/nuevaEntidad', 'EntidadController::formularioEntidad'); //Muestra el formulario para una nueva entidad
 $routes->post('/nuevaEntidad', 'EntidadController::formularioEntidad'); //Manda el formulario y vuelve a cargar la pagina
@@ -39,38 +30,6 @@ $routes->get('pantallaTesting', 'ControladorPrincipal::index');
 
 $routes->get('/registrar', 'LoginController::registrar');
 $routes->post('/registrar/registrarse', 'LoginController::registrarse');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 $routes->get('forms/formDocumentacion', 'DocumentacionController::formularioDocumentacion');
 $routes->post('insertarDocumentacion', 'DocumentacionController::insertarDocumentacion');

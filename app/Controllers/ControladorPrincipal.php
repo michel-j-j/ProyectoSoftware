@@ -6,7 +6,7 @@ class ControladorPrincipal extends BaseController
 {
     public function index(): string
     {
-       
-        return view('paginaTesting');
+
+        return view('bienvenida');
     }
 }

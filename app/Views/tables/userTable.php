@@ -40,8 +40,7 @@
                                 </div>
 
                                 <div class="datatable-search">
-                                    <input class="datatable-input" placeholder="Search..." type="search"
-                                        title="Search within table">
+                                    <input class="datatable-input" placeholder="Search..." type="search" title="Search within table">
                                 </div>
 
                             </div>
@@ -49,26 +48,16 @@
                                 <table class="table datatable datatable-table" id="dataTable">
                                     <thead>
                                         <tr>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Nombre</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Apellido</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">DNI</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Email</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Fecha de nacimiento</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Localidad</button></th>
-                                            <th data-sortable="true" style="width: 20%;"><button
-                                                    class="datatable-sorter">Direccion</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Nacionalidad</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Rol</button></th>
-                                            <th data-sortable="true" style="width: 10%;"><button
-                                                    class="datatable-sorter">Acciones</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Nombre</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Apellido</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">DNI</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Email</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Fecha de nacimiento</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Localidad</button></th>
+                                            <th data-sortable="true" style="width: 20%;"><button class="datatable-sorter">Direccion</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Nacionalidad</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Rol</button></th>
+                                            <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Acciones</button></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -107,21 +96,17 @@
                                                     } ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?php echo base_url('forms/modificarUsuario/') ?><?php echo $usuario['id']; ?>"
-                                                        class="btn btn-warning float-right">Editar</a>
-                                                    <form method="post" action="<?php echo base_url('/forms/eliminarUsuario') ?>"
-                                                        style="display: inline;">
-                                                        <input type="hidden" name="id_eliminar"
-                                                            value="<?php echo $usuario['id'];?>">
-                                                        <button type="submit"
-                                                            class="btn btn-danger float-right">Eliminar</button>
+                                                    <a href="<?php echo base_url('forms/modificarUsuario/') ?><?php echo $usuario['id']; ?>" class="btn btn-warning float-right">Editar</a>
+                                                    <form method="post" action="<?php echo base_url('/forms/eliminarUsuario') ?>" style="display: inline;">
+                                                        <input type="hidden" name="id_eliminar" value="<?php echo $usuario['id']; ?>">
+                                                        <button type="submit" class="btn btn-danger float-right">Eliminar</button>
                                                     </form>
 
                                                 </td>
                                             </tr>
-                                        </tbody>
-                                        <?php $index = $index + 1; ?>
-                                    <?php } ?>
+                                    </tbody>
+                                    <?php $index = $index + 1; ?>
+                                <?php } ?>
                                 </table>
                             </div>
                             <div class="datatable-bottom">
