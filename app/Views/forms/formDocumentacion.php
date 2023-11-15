@@ -70,24 +70,24 @@
                                                     <?php foreach ($data['usuarios'] as $usuario) { ?>
                                                         <tr data-index="<?php $index ?>">
                                                             <td>
-                                                                <?php echo $usuario->nombre ?>
+                                                                <?php echo $usuario['nombre'] ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario->apellido ?>
+                                                                <?php echo $usuario['apellido'] ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario->dni ?>
+                                                                <?php echo $usuario['dni'] ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario->email ?>
+                                                                <?php echo $usuario['email'] ?>
                                                             </td>
                                                             <td>
                                                                 <input class="form-check-input" type="radio"
-                                                                    name="id_usuario" value="<?= $usuario->email ?>"
-                                                                    id="radio<?= $usuario->id ?>">
+                                                                    name="id_usuario" value="<?= $usuario['email'] ?>"
+                                                                    id="radio<?= $usuario['id'] ?>">
                                                             </td>
                                                             <td>
-                                                                <a href="<?php echo base_url('listarDocumentacion/') ?><?php echo $usuario->id; ?>"
+                                                                <a href="<?php echo base_url('listarDocumentacion/') ?><?php echo $usuario['id']; ?>"
                                                                     class="btn btn-warning float-right">Lista documentacion</a>
                                                             </td>
                                                         </tr>

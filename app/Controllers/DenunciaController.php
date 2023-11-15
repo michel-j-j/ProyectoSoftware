@@ -8,6 +8,8 @@ use App\Models\DenunciaModel;
 use App\Models\DocumentoModel;
 use App\Models\EstadoDocumentacionModel;
 use App\Models\EstadoDenunciaModel;
+use App\Models\TipoDocumentacionModel;
+use App\Models\EntidadesModel;
 
 class DenunciaController extends BaseController
 {
@@ -74,7 +76,7 @@ class DenunciaController extends BaseController
 
                 $denunciasDelUsuario = $denunciaModel->obtenerDenunciasPorIdUsuario($idUsuario);
                 $activas = count($denunciasDelUsuario->getResultArray());
-               
+
                 foreach ($denunciasDelUsuario->getResultArray() as $row) {
                     if ($estadoDenunciaModel->isCancelado([$row['id_estado_denuncia']]) || $estadoDenunciaModel->isFinalizado([$row['id_estado_denuncia']])) {
                         $activas--;
@@ -174,6 +176,39 @@ class DenunciaController extends BaseController
         return view('seccionDenuncias/listadoDenuncias', $data);
     }
 
+    public function documentacionAsociada($id = null): string
+    {
+        $documentacionModel = new DocumentoModel();
+        $documentacion = new DocumentoModel();
+        $tipoDocumentacion = new TipoDocumentacionModel();
+        $tipoEntidad = new EntidadesModel();
+        $documentacion = $documentacion->obtenerDocumentacionPorDenuncia($id);
+        $i = 0;
 
+        if ($documentacion != null) {
+            foreach ($documentacion as $documento) {
+                $data['data'][$i]['id'] = $documento['id'];
+                $data['data'][$i]['numero'] = $documento['numero'];
+                $data['data'][$i]['fecha_vencimiento'] = $documento['fecha_vencimiento'];
+                $data['data'][$i]['id_usuario'] = $documento['id_usuario'];
+                $data['data'][$i]['id_entidad'] = $documento['id_entidad'];
+                $data['data'][$i]['id_tipo_documentacion'] = $documento['id_tipo_documentacion'];
+                $data['data'][$i]['nombre'] = $documento['nombre'];
+                $data['data'][$i]['fecha_emision'] = $documento['fecha_emision'];
+                $data['data'][$i]['nombreEntidad'] = $tipoEntidad->recuperarNombreEntidadPorId($documento['id_entidad']);
+                $data['data'][$i]['nombreTipoDocumentacion'] = $tipoDocumentacion->obtenerNombrePorId($documento['id_tipo_documentacion']);
+                $data['data'][$i]['estadoDocumentacion'] = $documentacionModel->obtenerEstadoDocumento($documento['id_estado_documentacion']);
+                
+                $i++;
+            }
+
+            return view('seccionDenuncias/documentosDeDenuncia', $data);
+        } else {
+            //retornar mensaje con "no hay documentacion para administrar
+            //    return view('forms/listaDocumentacionDeUsuario', $data);
+            //}
+            return view('seccionDocumentacion/sinDocumentacion');
+        }
+    }
 
 }

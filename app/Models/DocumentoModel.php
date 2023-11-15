@@ -67,7 +67,8 @@ class DocumentoModel extends Model
         return null;
     }
 
-    public function obtenerEstadoDocumento ($idEstado){
+    public function obtenerEstadoDocumento($idEstado)
+    {
         $estado = null;
         switch ($idEstado) {
             case "1":
@@ -85,5 +86,14 @@ class DocumentoModel extends Model
         }
 
         return $estado;
+    }
+    public function obtenerDocumentacionPorDenuncia($id)
+    {
+
+        if ($id != null) {
+
+            return $this->query("SELECT d.* FROM documentacion d JOIN denuncia_documentacion dd ON dd.id_documentacion = d.id JOIN denuncia den ON den.id = dd.id_denuncia WHERE den.id = $id;")->getResultArray();
+        }
+        return null;
     }
 }

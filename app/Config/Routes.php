@@ -100,3 +100,5 @@ $routes->get('administrarTipoDocumentacion','TipoDocumentacionController::admini
 $routes->post('administrarTipoDocumentacion','TipoDocumentacionController::administrarTipoDocumentacion');
 
 $routes->post('eliminarTipoDocumentacion','TipoDocumentacionController::eliminarTipoDocumentacion');
+
+$routes->get('documentacionAsociada/(:num)','DenunciaController::documentacionAsociada/$1');

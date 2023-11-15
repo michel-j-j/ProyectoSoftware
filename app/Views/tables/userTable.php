@@ -76,43 +76,43 @@
                                         <?php foreach ($usuarios as $usuario) { ?>
                                             <tr data-index="<?php $index ?>">
                                                 <td>
-                                                    <?php echo $usuario->nombre ?>
+                                                    <?php echo $usuario['nombre'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $usuario->apellido ?>
+                                                    <?php echo $usuario['apellido'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $usuario->dni ?>
+                                                    <?php echo $usuario['dni'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $usuario->email ?>
+                                                    <?php echo $usuario['email'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $usuario->fecha_nacimiento ?>
+                                                    <?php echo $usuario['fecha_nacimiento'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $usuario->localidad ?>
+                                                    <?php echo $usuario['localidad'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $usuario->direccion ?>
+                                                    <?php echo $usuario['direccion'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $usuario->nacionalidad ?>
+                                                    <?php echo $usuario['nacionalidad'] ?>
                                                 </td>
                                                 <td>
-                                                    <?php if ($usuario->id_rol == 1) {
+                                                    <?php if ($usuario['id_rol'] == 1) {
                                                         echo "Administrador";
                                                     } else {
                                                         echo "Ciudadano";
                                                     } ?>
                                                 </td>
                                                 <td>
-                                                    <a href="<?php echo base_url('forms/modificarUsuario/') ?><?php echo $usuario->id; ?>"
+                                                    <a href="<?php echo base_url('forms/modificarUsuario/') ?><?php echo $usuario['id']; ?>"
                                                         class="btn btn-warning float-right">Editar</a>
                                                     <form method="post" action="<?php echo base_url('/forms/eliminarUsuario') ?>"
                                                         style="display: inline;">
                                                         <input type="hidden" name="id_eliminar"
-                                                            value="<?php echo $usuario->id;?>">
+                                                            value="<?php echo $usuario['id'];?>">
                                                         <button type="submit"
                                                             class="btn btn-danger float-right">Eliminar</button>
                                                     </form>

@@ -93,12 +93,13 @@ class DocumentacionController extends BaseController
                 $i++;
             }
 
-            return view('forms/listaDocumentacionDeUsuario', $data);
+            return view('forms/documentacionAsociada', $data);
+        } else {
+            //retornar mensaje con "no hay documentacion para administrar
+            //    return view('forms/listaDocumentacionDeUsuario', $data);
+            //}
+            return view('seccionDocumentacion/sinDocumentacion');
         }
-        //  else {
-        //retornar mensaje con "no hay documentacion para administrar
-        //    return view('forms/listaDocumentacionDeUsuario', $data);
-        //}
     }
 
     public function modificarDocumentacion($id = null)
@@ -178,14 +179,14 @@ class DocumentacionController extends BaseController
                     $estadoDenuncia = "En curso";
                 } elseif (in_array('Denunciado', $estados) && in_array('Recuperado', $estados)) {
                     // Existen al menos un documento en estado "Denunciado" y uno en estado "Recuperado"
-                    $estadoDenuncia = "En curso";    
+                    $estadoDenuncia = "En curso";
                 } elseif ($documento['estado'] == 'Denunciado' && array_count_values($estados)['Denunciado'] === count($estados)) {
                     // Todos los documentos están en estado "Denunciado"
                     $estadoDenuncia = "Iniciada";
                 } elseif ($documento['estado'] == 'Recuperado' && array_count_values($estados)['Recuperado'] === count($estados)) {
                     // Todos los documentos están en estado "Recuperado"
                     $estadoDenuncia = "Finalizado";
-                } 
+                }
                 //Cambio el estado de la denuncia si corresponde
                 $idNuevoEstadoDenuncia = $denunciaModel->obtenerIdEstadoDenunciaPorNombre($estadoDenuncia);
                 $data2 = [
@@ -202,4 +203,5 @@ class DocumentacionController extends BaseController
 
 
     }
+    
 }

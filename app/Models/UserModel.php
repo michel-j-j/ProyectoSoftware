@@ -11,7 +11,7 @@ class UserModel extends Model
 
     protected $useAutoIncrement = true;
 
-    protected $returnType = 'App\Models\UserModel';
+    protected $returnType = 'array';
 
     protected $useSoftDeletes = false;
 

@@ -72,23 +72,23 @@
                                                     <?php foreach ($usuarios as $usuario) { ?>
                                                         <tr data-index="<?php $index ?>">
                                                             <td>
-                                                                <?php echo $usuario->nombre ?>
+                                                                <?php echo $usuario['nombre'] ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario->apellido ?>
+                                                                <?php echo $usuario['apellido'] ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario->dni ?>
+                                                                <?php echo $usuario['dni'] ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario->email ?>
+                                                                <?php echo $usuario['email'] ?>
                                                             </td>
                                                             <td>
                                                                 <form class="row g-3" id="administrarDenuncias"
                                                                     action="<?= base_url('administrarDenuncias') ?>"
                                                                     method="POST">
                                                                     <input type="hidden" class="form-control" id="email"
-                                                                        name="email" value="<?php echo $usuario->email ?>">
+                                                                        name="email" value="<?php echo $usuario['email'] ?>">
                                                                     <button type="submit"
                                                                         class="btn btn-primary">Seleccionar</button>
                                                                 </form>
