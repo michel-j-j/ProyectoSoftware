@@ -16,8 +16,8 @@ class TipoDocumentacionController extends BaseController
             $data = ([
 
                 "nombre" => $_POST['tipoDocumentacion'],
+                "pasos_recuperacion" => $_POST['pasos_recuperacion']
             ]);
-
             if ($tipoDocumentacionModel->insert($data)) {
                 $respuesta = [
                     'exito' => 'ok',

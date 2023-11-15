@@ -14,7 +14,7 @@ class TipoDocumentacionModel extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nombre'];
+    protected $allowedFields = ['nombre', 'pasos_recuperacion'];
 
 
     // Dates

@@ -39,6 +39,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Nombre</th>
+                                        <th scope="col">Pasos de recuperacion</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,6 +50,9 @@
                                             </td>
                                             <td scope="col">
                                                 <?php echo $tipoDocumentacion['nombre'] ?>
+                                            </td>
+                                            <td scope="col">
+                                                <?php echo $tipoDocumentacion['pasos_recuperacion'] ?>
                                             </td>
                                             <td scope="col">
 
@@ -88,8 +92,10 @@
                                 <div class="col-12">
                                     <label>Tipo de documentacion</label>
                                     <input type="text" class="form-control" id="tipoDocumentacion"
-                                        name="tipoDocumentacion">
-
+                                        name="tipoDocumentacion" required>
+                                        <label>Pasos de recuperacion</label>
+                                        <textarea class="form-control" id="pasos_recuperacion" name="pasos_recuperacion" required></textarea>
+                                     
 
                                     <div class="text-center">
                                         <br>
