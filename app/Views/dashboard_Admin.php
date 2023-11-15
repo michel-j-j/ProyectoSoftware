@@ -5,31 +5,30 @@
 <body>
 
     <main id="main" class="main">
-        <section class="section">
-            <div class="container mt-4">
+        <section class="section card mt-5 mb-5">
+            <div class="container mt-5 mb-5">
                 <div class="row">
                     <div class="jumbotron">
                         <h1 class="display-4">La billetera virtual para proteger tus documentos importantes</h1>
-                        <p class="lead">Carga tus documentos y denúncialos en caso de pérdida.</p>
+                        <p class="lead card-title">Carga tus documentos y denúncialos en caso de pérdida.</p>
                         <!-- Agrega un botón CTA principal aquí -->
                     </div>
                 </div>
-                <div class="row"> </div>
 
-                <div class="row">
+                <div class="row mt-5 mb-5">
                     <div class="col-lg-4 bienvenida">
-                        <h3>Seguridad de Documentos</h3>
-                        <p>Mantén tus documentos seguros en nuestra plataforma encriptada.</p>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Ver Documentos</a>
+                        <h3>Gestioná Usuarios</h3>
+                        <p>Gestion de usuarios en un solo click.</p>
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Ver Usuarios</a>
                     </div>
                     <div class="col-lg-4 bienvenida">
-                        <h3>Denuncia Rápida</h3>
-                        <p>Reporta la pérdida de documentos y toma medidas de inmediato.</p>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Denunciar documento</a>
+                        <h3>Administra Entidades</h3>
+                        <p>Agrega entidades de forma simple y sin problemas.</p>
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Gestionar Entidades</a>
                     </div>
                     <div class="col-lg-4 bienvenida">
-                        <h3>Notificaciones en Tiempo Real</h3>
-                        <p>Recibe alertas cuando tus documentos se actualicen o cambien de estado.</p>
+                        <h3>Control de denuncias</h3>
+                        <p>Accede rapidamente al listado de denuncias.</p>
                         <a class="btn btn-primary btn-lg" href="#" role="button">Ver Estado de Denuncias</a>
                     </div>
                 </div>

@@ -8,7 +8,13 @@ use CodeIgniter\Router\RouteCollection;
 
 
 //Get request ENTIDAD
+//PRUEBAS CON DASHBOARD Y CARGAR DOCUMENTACION DESDE EL USUARIO
 $routes->get('/', 'ControladorPrincipal::index');
+$routes->get('/dashboard/user', 'ControladorPrincipal::dashboardUsuario');
+$routes->get('/dashboard/administrator', 'ControladorPrincipal::dashboardAdministrador');
+$routes->get('/user/cargarDocumentacion', 'ControladorPrincipal::agregarDocumentos');
+//FIN PRUEBA
+
 //Creacion de entidades
 $routes->get('/nuevaEntidad', 'EntidadController::formularioEntidad'); //Muestra el formulario para una nueva entidad
 $routes->post('/nuevaEntidad', 'EntidadController::formularioEntidad'); //Manda el formulario y vuelve a cargar la pagina

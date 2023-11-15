@@ -11,7 +11,7 @@ class UserModel extends Model
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'App\Models\UserModel'; // cambiar por 'App\Models\UserModel';
+    protected $returnType     = 'array'; // cambiar por 'App\Models\UserModel';
     protected $useSoftDeletes = false;
 
     protected $allowedFields = ['nombre', 'apellido', 'email', 'contrasena', 'dni', 'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_rol'];

@@ -1232,7 +1232,6 @@ h6 {
   color: #012970;
 }
 
-.bienvenida:hover{
-  transition: 0.5s;
-  transform: scale(7);
+.margen{
+  margin-top: 50px;
 }
