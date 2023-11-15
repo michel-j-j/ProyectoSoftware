@@ -33,39 +33,39 @@
                                 action="<?= base_url('/forms/formUsuarios_admin') ?>" method="POST">
                                 <div class="col-12">
                                     <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre">
+                                    <input type="text" required class="form-control" id="nombre" name="nombre">
                                 </div>
                                 <div class="col-12">
                                     <label for="apellido" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" id="apellido" name="apellido">
+                                    <input type="text" required class="form-control" id="apellido" name="apellido">
                                 </div>
                                 <div class="col-12">
                                     <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control" id="email" name="email">
+                                    <input type="email" required class="form-control" id="email" name="email">
                                 </div>
                                 <div class="col-12">
                                     <label for="contrasena" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="contrasena" name="contrasena">
+                                    <input type="password" required class="form-control" id="contrasena" name="contrasena">
                                 </div>
                                 <div class="col-12">
                                     <label for="dni" class="form-label">DNI</label>
-                                    <input type="text" class="form-control" id="dni" name="dni">
+                                    <input type="text" required class="form-control" id="dni" name="dni">
                                 </div>
                                 <div class="col-12">
                                     <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
-                                    <input type="date" class="form-control" id="fecha_ nacimiento" name="fecha_nacimiento">
+                                    <input type="date" required class="form-control" id="fecha_ nacimiento" name="fecha_nacimiento">
                                 </div>
                                 <div class="col-12">
                                     <label for="localidad" class="form-label">Localidad</label>
-                                    <input type="text" class="form-control" id="localidad" name="localidad">
+                                    <input type="text" required class="form-control" id="localidad" name="localidad">
                                 </div>
                                 <div class="col-12">
                                     <label for="direccion" class="form-label">Direccion</label>
-                                    <input type="text" class="form-control" id="direccion" name="direccion">
+                                    <input type="text" required class="form-control" id="direccion" name="direccion">
                                 </div>
                                 <div class="col-12">
                                     <label for="nacionalidad" class="form-label">Nacionalidad</label>
-                                    <input type="text" class="form-control" id="nacionalidad" name="nacionalidad">
+                                    <input type="text" required class="form-control" id="nacionalidad" name="nacionalidad">
                                 </div>
 
                                 <!-- cambiar por findAll roles -->

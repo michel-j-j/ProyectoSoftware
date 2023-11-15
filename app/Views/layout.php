@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-<<<<<<< HEAD
+
 
     <head>
         <meta charset="utf-8">
@@ -20,7 +20,9 @@
 
         <!-- Google Fonts -->
         <link href="https://fonts.gstatic.com" rel="preconnect">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet">
 
         <link href="<?= base_url('/assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
         <link href="<?= base_url('/assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
@@ -38,37 +40,7 @@
 
         <?= $this->renderSection('title') ?>
     </head>
-=======
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard - NiceAdmin Bootstrap Template</title>
-
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="<?= base_url('assets/img/favicon.png') ?>" rel="icon">
-    <link href="<?= base_url('assets/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
-
-    <link href="<?= base_url('/assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/assets/vendor/boxicons/css/boxicons.min.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/assets/vendor/quill/quill.snow.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/assets/vendor/quill/quill.bubble.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/assets/vendor/remixicon/remixicon.css') ?>" rel="stylesheet">
-    <link href="<?= base_url('/assets/vendor/simple-datatables/style.css') ?>" rel="stylesheet">
-
-    <link href="<?= base_url('/assets/css/style.css') ?>" rel="stylesheet">
-
-</head>
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
 
 <body>
 
@@ -314,12 +286,10 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-<<<<<<< HEAD
-                    <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-=======
+
                     <i class="bi bi-menu-button-wide"></i><span>Components</span><i
                         class="bi bi-chevron-down ms-auto"></i>
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
+
                 </a>
                 <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -397,27 +367,20 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-<<<<<<< HEAD
-                    <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="forms-elements.html">
-                            <i class="bi bi-circle"></i><span>Form Elements</span>
-=======
+
                     <i class="bi bi-journal-text"></i><span>Documentacion</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="<?= base_url('/forms/formDocumentacion') ?>">
-                            <i class="bi bi-circle"></i><span>Cargar nueva documentacion</span>
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
+                            <i class="bi bi-circle"></i><span>Administrar documentacion de usuarios</span>
+
                         </a>
                     </li>
                     <li>
-                        <a href="forms-layouts.html">
-                            <i class="bi bi-circle"></i><span>Form Layouts</span>
+                        <a href="<?= base_url('/administrarTipoDocumentacion') ?>">
+                            <i class="bi bi-circle"></i><span>Administrar tipos de documentacion</span>
                         </a>
                     </li>
                     <li>
@@ -435,8 +398,9 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-<<<<<<< HEAD
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Entidades</span><i class="bi bi-chevron-down ms-auto"></i>
+
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Entidades</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -447,20 +411,8 @@
                     <li>
                         <a href=<?= base_url('/listaEntidades') ?>>
                             <i class="bi bi-circle"></i><span>Listado de Entidades</span>
-=======
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="tables-general.html">
-                            <i class="bi bi-circle"></i><span>General Tables</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tables-data.html">
-                            <i class="bi bi-circle"></i><span>Data Tables</span>
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
+
+
                         </a>
                     </li>
                 </ul>
@@ -468,19 +420,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-<<<<<<< HEAD
-                    <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="charts-chartjs.html">
-                            <i class="bi bi-circle"></i><span>Chart.js</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="charts-apexcharts.html">
-                            <i class="bi bi-circle"></i><span>ApexCharts</span>
-=======
+
                     <i class="bi bi-bar-chart"></i><span>Usuarios</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -492,7 +432,7 @@
                     <li>
                         <a href="<?= base_url('/tables/listaUsuarios') ?>">
                             <i class="bi bi-circle"></i><span>Listado/modificar usuario</span>
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
+
                         </a>
                     </li>
                     <li>
@@ -505,26 +445,19 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-<<<<<<< HEAD
-                    <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="icons-bootstrap.html">
-                            <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-=======
+
                     <i class="bi bi-gem"></i><span>Denuncias</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="<?= base_url('/seleccionarUsuarioDenuncia') ?>">
-                            <i class="bi bi-circle"></i><span>Administrar denuncias</span>
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
+                            <i class="bi bi-circle"></i><span>Administrar documentos denunciados</span>
+
                         </a>
                     </li>
                     <li>
-                        <a href="icons-remix.html">
-                            <i class="bi bi-circle"></i><span>Remix Icons</span>
+                        <a href="<?= base_url('/listadoDenuncias') ?>">
+                            <i class="bi bi-circle"></i><span>Lista de denuncias de usuarios</span>
                         </a>
                     </li>
                     <li>
@@ -611,18 +544,16 @@
         <script src="<?= base_url('/assets/vendor/simple-datatables/simple-datatables.js') ?>"></script>
         <script src="<?= base_url('/assets/vendor/tinymce/tinymce.min.js') ?>"></script>
         <script src="<?= base_url('/assets/vendor/php-email-form/validate.js') ?>"></script>
-<<<<<<< HEAD
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
         <!-- Template Main JS File -->
         <script src="<?= base_url('/assets/js/main.js') ?>"></script>
         <?= $this->renderSection('footer'); ?>
-=======
 
-        <!-- Template Main JS File -->
-        <script src="<?= base_url('/assets/js/main.js') ?>"></script>
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
     </footer><!-- End Footer -->
 
 </body>

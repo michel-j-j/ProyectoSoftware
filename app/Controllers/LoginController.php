@@ -8,13 +8,13 @@ use Exception;
 
 class LoginController extends BaseController
 {
-    public function login(): String
+    public function login(): string
     {
 
         return view('pages/login');
     }
 
-    public function registrar(): String
+    public function registrar(): string
     {
         return view('pages/registrar');
     }
@@ -23,10 +23,9 @@ class LoginController extends BaseController
     {
         $retorno = [
             'estado' => 'error',
-            'msj'    => 'Email y/o contraseña erroneo.',
-            'url'    =>  base_url('/')
+            'msj' => 'Email y/o contraseña erroneo.',
+            'url' => base_url('/')
         ];
-
         try {
             $userModel = new UserModel();
 
@@ -54,11 +53,12 @@ class LoginController extends BaseController
                 }
             }
 
-            return   $this->response->setJSON($retorno);
+            return $this->response->setJSON($retorno);
         } catch (Exception $e) {
+
             $retorno['msj'] = $e->getMessage();
 
-            return   $this->response->setJSON($retorno);
+            return $this->response->setJSON($retorno);
         }
     }
 
@@ -66,31 +66,30 @@ class LoginController extends BaseController
     {
         $retorno = [
             'estado' => 'error',
-            'msj'    => 'Error en el back',
-            'url'    =>  base_url('/login')
+            'msj' => 'Error en el back',
+            'url' => base_url('/login')
         ];
 
         try {
             $userModel = new UserModel();
-            $nombre =   $_POST['nombre'];
+            $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
-            $email =    $_POST['email'];
+            $email = $_POST['email'];
             $telefono = $_POST['telefono'];
-            $dni =       $_POST['dni'];
-            $contra =   $_POST['contra'];
+            $dni = $_POST['dni'];
+            $contra = $_POST['contra'];
 
             $datos = [
 
-                'nombre'         => $nombre,
-                'apellido'       => $apellido,
-                'email'          => $email,
-                'dni'            => $dni,
-                'telefono'       => $telefono,
-                'contraseña'     => $contra
+                'nombre' => $nombre,
+                'apellido' => $apellido,
+                'email' => $email,
+                'dni' => $dni,
+                'telefono' => $telefono,
+                'contraseña' => $contra
             ];
 
-            if($userModel->where('email', $email)->first())
-            {
+            if ($userModel->where('email', $email)->first()) {
                 throw new Exception('El usuario ya existe');
             }
 

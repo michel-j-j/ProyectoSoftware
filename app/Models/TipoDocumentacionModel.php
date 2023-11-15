@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class RoleModel extends Model
+class TipoDocumentacionModel extends Model
 {
-    protected $table = 'rol';
-    protected $primaryKey = 'id';
+    protected $table = 'tipo_documentacion';
+    protected $primaryKey = 'id_tipo_documentacion';
 
     protected $useAutoIncrement = true;
 
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['rol'];
+    protected $allowedFields = ['nombre'];
 
 
     // Dates
@@ -41,11 +41,21 @@ class RoleModel extends Model
     protected $beforeDelete = [];
     protected $afterDelete = [];
 
-    public function obtenerIdPorNombre($nombreRol)
+    public function obtenerIdPorNombre($tipoDocumentacionNombre)
     {
-        $rol = $this->select('id')->getWhere(['rol' => $nombreRol])->getRow();
-        if ($rol) {
-            return $rol->id;
+        $idTipoDocumentacion = $this->select('id_tipo_documentacion')->getWhere(['nombre' => $tipoDocumentacionNombre])->getRow();
+        if ($idTipoDocumentacion) {
+            return $idTipoDocumentacion->id_tipo_documentacion;
+        } else {
+            return null; // O puedes lanzar una excepción u otro manejo de errores si el rol no se encuentra
+        }
+    }
+
+    public function obtenerNombrePorId($idTipoDocumentacion)
+    {
+        $nombre = $this->select('nombre')->getWhere(['id_tipo_documentacion' => $idTipoDocumentacion])->getRow();
+        if ($nombre) {
+            return $nombre->nombre;
         } else {
             return null; // O puedes lanzar una excepción u otro manejo de errores si el rol no se encuentra
         }

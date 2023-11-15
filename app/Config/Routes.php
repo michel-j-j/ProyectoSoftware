@@ -74,6 +74,11 @@ $routes->post('/registrar/registrarse', 'LoginController::registrarse');
 
 $routes->get('forms/formDocumentacion', 'DocumentacionController::formularioDocumentacion');
 $routes->post('insertarDocumentacion', 'DocumentacionController::insertarDocumentacion');
+$routes->get('listarDocumentacion/(:num)', 'DocumentacionController::listarDocumentacion/$1');
+$routes->post('eliminarDocumentacion', 'DocumentacionController::eliminarDocumentacion');
+$routes->get('modificarDocumento/(:num)', 'DocumentacionController::modificarDocumentacion/$1');
+$routes->post('modificarDocumento', 'DocumentacionController::modificarDocumentacion');
+
 
 $routes->get('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');
 $routes->post('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');
@@ -86,3 +91,12 @@ $routes->post('forms/eliminarUsuario/', 'UserController::eliminarUsuario/');
 
 $routes->get('seleccionarUsuarioDenuncia', 'DenunciaController::seleccionarUsuarioDenuncia');
 $routes->post('administrarDenuncias', 'DenunciaController::administrarDenunciasActivas');
+
+$routes->post('cambiarEstadoDocumentacion', 'DocumentacionController::cambiarEstadoDocumentacion');
+
+$routes->get('listadoDenuncias','DenunciaController::listadoDenuncias');
+
+$routes->get('administrarTipoDocumentacion','TipoDocumentacionController::administrarTipoDocumentacion');
+$routes->post('administrarTipoDocumentacion','TipoDocumentacionController::administrarTipoDocumentacion');
+
+$routes->post('eliminarTipoDocumentacion','TipoDocumentacionController::eliminarTipoDocumentacion');

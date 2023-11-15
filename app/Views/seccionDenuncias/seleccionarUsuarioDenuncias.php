@@ -2,15 +2,19 @@
 <?= $this->section('content') ?>
 
 
+
+
+
+
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Administrar denuncias</h1>
+        <h1>Administrar documentos denunciados</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item">Denuncias</li>
-                <li class="breadcrumb-item active">Administrar denuncias</li>
+                <li class="breadcrumb-item active">Administrar documentos denunciados</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -59,22 +63,35 @@
                                                                 class="datatable-sorter">DNI</button></th>
                                                         <th data-sortable="true" style="width: 10%;"><button
                                                                 class="datatable-sorter">Email</button></th>
+                                                        <th data-sortable="true" style="width: 10%;"><button
+                                                                class="datatable-sorter">Administrar denuncias</button>
+                                                        </th>
                                                 </thead>
                                                 <tbody>
                                                     <?php $index = 0 ?>
                                                     <?php foreach ($usuarios as $usuario) { ?>
                                                         <tr data-index="<?php $index ?>">
                                                             <td>
-                                                                <?php echo $usuario['nombre'] ?>
+                                                                <?php echo $usuario->nombre ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario['apellido'] ?>
+                                                                <?php echo $usuario->apellido ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario['dni'] ?>
+                                                                <?php echo $usuario->dni ?>
                                                             </td>
                                                             <td>
-                                                                <?php echo $usuario['email'] ?>
+                                                                <?php echo $usuario->email ?>
+                                                            </td>
+                                                            <td>
+                                                                <form class="row g-3" id="administrarDenuncias"
+                                                                    action="<?= base_url('administrarDenuncias') ?>"
+                                                                    method="POST">
+                                                                    <input type="hidden" class="form-control" id="email"
+                                                                        name="email" value="<?php echo $usuario->email ?>">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Seleccionar</button>
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -109,14 +126,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Seleccionar usuario</h5>
+                            <h5 class="card-title">Seleccionar usuario por email</h5>
 
                             <!-- Vertical Form -->
                             <form class="row g-3" id="administrarDenuncias"
                                 action="<?= base_url('administrarDenuncias') ?>" method="POST">
                                 <div class="col-12">
                                     <label for="email" class="form-label">E-mail a administrar</label>
-                                    <input type="text" class="form-control" id="email" name="email">
+                                    <input type="text" required class="form-control" id="email" name="email">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Confirmar</button>
                         </div>
@@ -129,7 +146,7 @@
         </div>
         </div>
 
-    </section>
+
 
 </main><!-- End #main -->
 
