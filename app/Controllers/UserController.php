@@ -38,10 +38,6 @@ class UserController extends BaseController
                 ]);
                 $usuario->insert($data);
             }
-<<<<<<< HEAD
-=======
-
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
         }
 
         //hacer view
@@ -55,11 +51,7 @@ class UserController extends BaseController
 
         if ($_POST) {
             $nombre_rol = $_POST["rol"];
-<<<<<<< HEAD
-
-=======
            
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
             // Obtener el ID del rol a partir del nombre
             $rolModel = new RoleModel();
             $rol = $rolModel->select('id')->getWhere(['rol' => $nombre_rol])->getRow();
@@ -93,29 +85,17 @@ class UserController extends BaseController
         return view('tables/userTable', $data);
     }
 
-<<<<<<< HEAD
-    public function eliminarUsuario()
-    {
-        if ($_POST) {
-            $usuarios = new UserModel();
-            $usuarios->delete($_POST['id_eliminar']);
-=======
     public function eliminarUsuario() 
     {
         if ($_POST) {
         $usuarios = new UserModel();
         $usuarios->delete($_POST['id_eliminar']);
         
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
         }
         $usuarios = new UserModel();
         $data['usuarios'] = $usuarios->findAll();
         return view('tables/userTable', $data);
     }
-<<<<<<< HEAD
-}
-=======
 
 
 }
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e

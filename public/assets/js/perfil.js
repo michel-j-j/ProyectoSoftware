@@ -1,31 +1,23 @@
 $(document).ready(function () {
-
-
-    $('.eliminarEntidadForm').submit(function (e) {
+    $('#modificarPerfil').submit(function (e) {
         e.preventDefault();
-
+        var formData = $(this).serialize();
         Swal.fire({
-            title: "¿Desea eliminar la entidad ?",
-            text: "¡Esta accion no podra deshacerse!",
+            title: "Estas seguro de la modificaciones?",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Sí, enviar",
-            cancelButtonText: "Cancelar"
+            confirmButtonText: "Si, estoy seguro",
+            cancelButtonText: "No, no estoy seguro"
         }).then((result) => {
             if (result.isConfirmed) {
-
-                var formData = $(this).serialize();
-
                 $.ajax({
-                    url: "eliminarEntidad", // destino
+                    url: "modificar",
                     method: "POST",
                     data: formData,
                     success: function (data) {
-                        //console.log(data);
-
-                        if (data['exito'] === 'ok') {
+                        if (data.estado == 'ok') {
                             Swal.fire({
                                 icon: 'success',
                                 title: data.msj,
@@ -35,49 +27,39 @@ $(document).ready(function () {
                                 window.location.href = data.url;
                             })
                         }
-                        else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: data.msj,
-                                showConfirmButton: false,
-                                timer: 1500
-
-                            }).then((result) => {
-                                window.location.href = data.url;
-                            })
-                        }
-
                     },
                     error: function (xhr, status, error) {
-                        console.log("Error: " + error + status + xhr);
+                        Swal.fire({
+                            icon: 'error',
+                            title: error.msj,
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                     }
                 });
             }
         });
     });
 
-    $('#crearEntidad').submit(function (e) {
+    $('#modificarContra').submit(function (e) {
         e.preventDefault();
+        var formData = $(this).serialize();
         Swal.fire({
-            title: "¿Desea crear una nueva entidad ?",
-            text: "",
+            title: "Estas seguro de modificar su contraseña?",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Sí, enviar",
-            cancelButtonText: "Cancelar"
+            confirmButtonText: "Si, estoy seguro",
+            cancelButtonText: "No, no estoy seguro"
         }).then((result) => {
             if (result.isConfirmed) {
-
-                var formData = $(this).serialize();
-
                 $.ajax({
-                    url: "nuevaEntidad", // destino
+                    url: "modificarContra",
                     method: "POST",
                     data: formData,
                     success: function (data) {
-                        if (data['exito'] === 'ok') {
+                        if (data.estado == 'ok') {
                             Swal.fire({
                                 icon: 'success',
                                 title: data.msj,
@@ -87,26 +69,27 @@ $(document).ready(function () {
                                 window.location.href = data.url;
                             })
                         }
-                        else {
+                        else
+                        {
                             Swal.fire({
                                 icon: 'error',
                                 title: data.msj,
                                 showConfirmButton: false,
                                 timer: 1500
-
-                            }).then((result) => {
-                                window.location.href = data.url;
                             })
                         }
-
                     },
                     error: function (xhr, status, error) {
-                        console.log("Error: " + error + status + xhr);
+                        Swal.fire({
+                            icon: 'error',
+                            title: error.msj,
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                     }
                 });
             }
+
         });
     });
-
 });
-

@@ -5,17 +5,6 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-
-
-
-
-
-
-
-
-
-
-
 //Get request ENTIDAD
 $routes->get('/', 'Home::index');
 //Creacion de entidades
@@ -35,42 +24,11 @@ $routes->post('/eliminarEntidad', 'EntidadController::eliminarEntidad');
 
 $routes->get('/login', 'LoginController::login');
 $routes->post('/login/logear', 'LoginController::logear');
-$routes->get('pantallaTesting', 'ControladorPrincipal::index');
-
 $routes->get('/registrar', 'LoginController::registrar');
 $routes->post('/registrar/registrarse', 'LoginController::registrarse');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$routes->get('/recuperar', 'LoginController::recuperar');
+$routes->post('/recuperar/recuperarse', 'LoginController::recuperarse');
 
 $routes->get('forms/formDocumentacion', 'DocumentacionController::formularioDocumentacion');
 $routes->post('insertarDocumentacion', 'DocumentacionController::insertarDocumentacion');
@@ -86,3 +44,11 @@ $routes->post('forms/eliminarUsuario/', 'UserController::eliminarUsuario/');
 
 $routes->get('seleccionarUsuarioDenuncia', 'DenunciaController::seleccionarUsuarioDenuncia');
 $routes->post('administrarDenuncias', 'DenunciaController::administrarDenunciasActivas');
+
+$routes->get('perfil', 'PerfilController::perfil');
+
+$routes->post('modificar', 'PerfilController::modificarPerfil');
+
+$routes->post('modificarContra', 'PerfilController::modificarContrasena');
+
+$routes->get('configuracion', 'PerfilController::configuracionPerfil');

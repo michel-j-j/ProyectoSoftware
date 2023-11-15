@@ -7,22 +7,14 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table      = 'usuario';
-<<<<<<< HEAD
     protected $primaryKey = 'id_usuario';
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'array';
-=======
-    protected $primaryKey = 'id';
-
-    protected $useAutoIncrement = true;
-
-    protected $returnType     = 'array'; // cambiar por 'App\Models\UserModel';
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
+    protected $returnType     = 'array'; //,'App\Models\UserModel'
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nombre', 'apellido', 'email', 'contrasena', 'dni', 'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_rol'];
+    protected $allowedFields = ['nombre', 'apellido', 'email', 'contraseña', 'dni', 'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_usuario','id_rol','sobre_mi','telefono'];
 
     // Dates
     protected $useTimestamps = false;
@@ -47,8 +39,4 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
