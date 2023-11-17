@@ -25,8 +25,9 @@ class LoginController extends BaseController
         return view('pages/registrar');
     }
 
-    public function logear(): ResponseInterface{
-        
+    public function logear(): ResponseInterface
+    {
+
         $retorno = [
             'estado' => 'error',
             'msj'    => 'Email y/o contraseña erroneo.',
@@ -86,25 +87,34 @@ class LoginController extends BaseController
 
         try {
             $userModel = new UserModel();
-            $nombre =   $_POST['nombre'];
-            $apellido = $_POST['apellido'];
-            $email =    $_POST['email'];
-            $telefono = $_POST['telefono'];
-            $dni =      $_POST['dni'];
-            $contra =   $_POST['contra'];
+            $nombre =       $_POST['nombre'];
+            $direccion =    $_POST['direccion'];
+            $localidad =    $_POST['localidad'];
+            $nacionalidad = $_POST['nacionalidad'];
+            $sobre =        $_POST['sobre_mi'];
+            $apellido =     $_POST['apellido'];
+            $email =        $_POST['email'];
+            $telefono =     $_POST['telefono'];
+            $dni =          $_POST['dni'];
+            $contra =       $_POST['contra'];
+            $fecha =        $_POST['fecha_nacimiento'];
 
             $datos = [
 
-                'nombre'         => $nombre,
-                'apellido'       => $apellido,
-                'email'          => $email,
-                'dni'            => $dni,
-                'telefono'       => $telefono,
-                'contraseña'     => $contra
+                'nombre'          => $nombre,
+                'apellido'        => $apellido,
+                'direccion'       => $direccion,
+                'localidad'       => $localidad,
+                'nacionalidad'    => $nacionalidad,
+                'sobre_mi'        => $sobre,
+                'email'           => $email,
+                'dni'             => $dni,
+                'fecha_nacimiento'=> $fecha,
+                'telefono'        => $telefono,
+                'contraseña'      => $contra
             ];
 
-            if($userModel->where('email', $email)->first())
-            {
+            if ($userModel->where('email', $email)->first()) {
                 throw new Exception('El usuario ya existe');
             }
 
@@ -122,7 +132,7 @@ class LoginController extends BaseController
         }
     }
 
-    public function recuperarse (): ResponseInterface
+    public function recuperarse(): ResponseInterface
     {
         $retorno = [
             'estado' => 'error',
@@ -130,27 +140,25 @@ class LoginController extends BaseController
             'url'    =>  base_url('/login')
         ];
 
-        try{
-        $mail = new Phpmailer_lib();
-        var_dump($mail);
-        $mail = $mail->load();
+        try {
+            $mail = new Phpmailer_lib();
+            var_dump($mail);
+            $mail = $mail->load();
 
-        var_dump($mail);
-        $mail->addAddress($_POST['email']);
+            var_dump($mail);
+            $mail->addAddress($_POST['email']);
 
-        $mail->Subject = 'Recuperacion de la contraseña.';
-        $mail->Body = '<html>
+            $mail->Subject = 'Recuperacion de la contraseña.';
+            $mail->Body = '<html>
         <h1>Contraseña</h1>
         </html>';
-        
-        $retorno['estado'] = 'ok';
-        $retorno['msj'] = 'Email enviado con exito!';
-        $retorno['url'] =  base_url('/login');
 
-          return $this->response->setJSON($retorno);
-        }
-        catch(Exception $e)
-        {
+            $retorno['estado'] = 'ok';
+            $retorno['msj'] = 'Email enviado con exito!';
+            $retorno['url'] =  base_url('/login');
+
+            return $this->response->setJSON($retorno);
+        } catch (Exception $e) {
             $retorno['msj'] = $e->getMessage();
             return $this->response->setJSON($retorno);
         }

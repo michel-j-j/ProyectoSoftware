@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
+
 use App\Models\UserModel;
 
 $userModel = new UserModel();
@@ -16,8 +17,8 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-   
-    <link href="<?= base_url('assets/img/logo.png') ?>"  rel="shortcut icon">
+
+    <link href="<?= base_url('assets/img/logo.png') ?>" rel="shortcut icon">
     <!-- Favicons -->
     <link href="<?= base_url('assets/img/favicon.png') ?>" rel="icon">
     <link href="<?= base_url('assets/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">
@@ -131,7 +132,7 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="assets/img/profile-img.png" alt="Perfil " class="rounded-circle">
+                        <img src=<?= base_url('assets/img/profile-img.png')?> alt="Perfil " class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $user['nombre'] . ' ' . $user['apellido'] ?></span>
                     </a><!-- End Profile Iamge Icon -->
 
@@ -149,20 +150,24 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href='<?php echo base_url('perfil/perfil') ?>'>
+
+                            <a class="dropdown-item d-flex align-items-center" href='<?php echo base_url('perfil') ?>'>
                                 <i class="bi bi-person"></i>
                                 <span>Mi Perfil</span>
                             </a>
+
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href='<?php echo base_url('perfil/configuracion') ?>'>
-                                <i class="bi bi-gear"></i>
-                                <span>Configuracion de Cuenta</span>
-                            </a>
+                            <form action='<?php echo base_url('perfil') ?>' method="GET">
+                                <button class="dropdown-item d-flex align-items-center" href='<?php echo base_url('perfil') ?>' type="submit" name="menu" value="1">
+                                    <i class="bi bi-gear"></i>
+                                    <span>Configuracion de Cuenta</span>
+                                    </a>
+                            </form>
                         </li>
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="#">
@@ -283,6 +288,17 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
         <!-- Template Main JS File -->
         <script src="<?= base_url('/assets/js/main.js') ?>"></script>
         <script src="<?= base_url('/assets/js/perfil.js') ?>"></script>
+        <?php
+        if (isset($_GET)) {
+            if (isset($_GET['menu'])) {
+                echo "<script>
+      $(document).ready(function() {
+          $('#editarPerfil').click();
+      });
+      </script>";
+            }
+        }
+        ?>
     </footer><!-- End Footer -->
 
 </body>

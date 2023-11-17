@@ -1,15 +1,11 @@
 <?= $this->extend('layout') ?>
 <?= $this->section('content') ?>
 <main id="main" class="main">
-  <?php
-  if (isset($_POST)) {
-  }
-  ?>
   <div class="pagetitle">
     <h1>Perfil</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href=' <?php echo base_url('incio')?>' >Inicio</a></li>
+        <li class="breadcrumb-item"><a href=' <?php echo base_url('incio') ?>'>Inicio</a></li>
         <li class="breadcrumb-item">Cuenta</li>
         <li class="breadcrumb-item active">Perfil</li>
       </ol>
@@ -49,7 +45,7 @@
               </li>
 
               <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Editar Perfil</button>
+                <button class="nav-link" id="editarPerfil" data-bs-toggle="tab" data-bs-target="#profile-edit">Editar Perfil</button>
               </li>
               <li class="nav-item">
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Cambiar Contraseña</button>
@@ -220,5 +216,4 @@
   </section>
 
 </main><!-- End #main -->
-
 <?= $this->endSection() ?>
