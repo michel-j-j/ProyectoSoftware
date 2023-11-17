@@ -29,7 +29,6 @@
 
 
     <link href="<?= base_url('/assets/css/style.css') ?>" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

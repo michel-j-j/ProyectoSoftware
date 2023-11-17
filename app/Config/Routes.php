@@ -13,6 +13,7 @@ $routes->get('/', 'ControladorPrincipal::index');
 $routes->get('/dashboard/user', 'ControladorPrincipal::dashboardUsuario');
 $routes->get('/dashboard/administrator', 'ControladorPrincipal::dashboardAdministrador');
 $routes->get('/user/cargarDocumentacion', 'ControladorPrincipal::agregarDocumentos');
+$routes->post('/user/cargarDoc', 'ControladorPrincipal::agregarDoc');
 //FIN PRUEBA
 
 //Creacion de entidades

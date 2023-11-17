@@ -3,6 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\DocumentoModel;
+use App\Models\EntidadesModel;
+use App\Models\UserModel;
+use App\Models\TipoDocumentacionModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class ControladorPrincipal extends BaseController
@@ -19,7 +22,16 @@ class ControladorPrincipal extends BaseController
     }
     public function agregarDocumentos()
     {
-        return view('forms/formDocumentacionUsuario');
+
+        $usuarios = new UserModel();
+        $entidades = new EntidadesModel();
+        $tipoDocumentos = new TipoDocumentacionModel();
+        $data['data'] = [
+            'usuarios' => $usuarios->findAll(),
+            'entidades' => $entidades->findAll(),
+            'tipoDocumentacion' => $tipoDocumentos->findAll()
+        ];
+        return view('forms/formDocumentacionUsuario', $data);
     }
 
     public function agregarDoc(): ResponseInterface
