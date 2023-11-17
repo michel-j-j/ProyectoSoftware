@@ -7,11 +7,11 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table      = 'usuario';
-    protected $primaryKey = 'id_usuario';
+    protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 
-    protected $returnType     = 'array'; //,'App\Models\UserModel'
+    protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
     protected $allowedFields = ['nombre', 'apellido', 'email', 'contraseña', 'dni', 'fecha_nacimiento', 'localidad', 'direccion', 'nacionalidad', 'id_usuario','id_rol','sobre_mi','telefono'];

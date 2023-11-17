@@ -52,7 +52,7 @@ class LoginController extends BaseController
                     }
 
                     $data = ([
-                        'id' => $user['id_usuario'],
+                        'id' => $user['id'],
                         'nombre' => $user['nombre'],
                         'apellido' => $user['apellido'],
                         'tipo_rol' => $tipoRol,

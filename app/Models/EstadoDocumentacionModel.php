@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class EstadoDocumentacionModel extends Model
 {
     protected $table      = 'estado_documentacion';
-    protected $primaryKey = 'id_estado_documentacion';
+    protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 

@@ -13,7 +13,7 @@ class PerfilController extends BaseController
     function perfil(): String
     {
         $userModel = new UserModel();
-        $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
+        $user = $userModel->where('id', $_SESSION['id'])->first();
         $data = ['user' => $user];
         return (view('perfil/perfil', $data));
     }
@@ -97,7 +97,7 @@ class PerfilController extends BaseController
         $contraVieja = $_POST['contra_vieja'];
         $contraNueva = $_POST['contra_nueva'];
 
-        $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
+        $user = $userModel->where('id', $_SESSION['id'])->first();
         
         if($contraVieja != $user['contraseña'])
         {

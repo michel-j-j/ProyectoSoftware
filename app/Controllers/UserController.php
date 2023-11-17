@@ -38,6 +38,10 @@ class UserController extends BaseController
                 ]);
                 $usuario->insert($data);
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
         }
 
         //hacer view

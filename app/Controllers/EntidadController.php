@@ -11,33 +11,75 @@ class EntidadController extends BaseController
 
     public function formularioEntidad()
     {
+
+        helper(["url", "form"]);
+        $validation = \Config\Services::validation();
+
+        $validation->setRules(
+            [
+                "nombre" => "required",
+                "direccion" => "required",
+                "localidad" => "required",
+                "email" => "required",
+                "telefono" => "required | min_length[10]",
+            ],
+            [
+                "nombre" => [
+                    "required" => "Debe ingresar un nombre valido"
+                ],
+                "direccion" => [
+                    "required" => "Debe ingresar una direccion valida"
+                ],
+                "localidad" => [
+                    "required" => "Debe ingresar una localidad valida"
+                ],
+                "email" => [
+                    "required" => "Debe ingresar un email valido"
+                ],
+                "telefono" => [
+                    "required" => "Debe ingresar un telefono valido",
+                    "min_length" => "El numero debe tener minimo 10 caracteres"
+                ]
+            ]
+        );
+
         $entidad = new EntidadesModel();
 
         if ($_POST) {
-            $data = ([
 
-                "nombre" => $_POST['nombre'],
-                "direccion" => $_POST['direccion'],
-                "localidad" => $_POST['localidad'],
-                "email" => $_POST['email'],
-                "telefono" => $_POST['telefono'],
-                "id_usuario" => $_POST['id_usuario'],
-            ]);
-
-            if ($entidad->insert($data)) {
+            if (!$validation->withRequest($this->request)->run()) {
+                $errors = $validation->getErrors();
                 $respuesta = [
-                    'exito' => 'ok',
-                    'msj' => 'Nueva Entidad Creada!',
+                    'exito' => "ok",
+                    'msj' => $errors,
+                    'url' => base_url('/nuevaEntidad'),
+                ];
+                return  $this->response->setJSON($respuesta);
+            } else {
+                $data = ([
+
+                    "nombre" => $_POST['nombre'],
+                    "direccion" => $_POST['direccion'],
+                    "localidad" => $_POST['localidad'],
+                    "email" => $_POST['email'],
+                    "telefono" => $_POST['telefono'],
+                    "id_usuario" => $_POST['id_usuario'],
+                ]);
+                if ($entidad->insert($data)) {
+                    $respuesta = [
+                        'exito' => 'ok',
+                        'msj' => 'Nueva Entidad Creada!',
+                        'url' => base_url('/listaEntidades'),
+                    ];
+                    return  $this->response->setJSON($respuesta);
+                }
+                $respuesta = [
+                    'exito' => 'noOk',
+                    'msj' => 'No se pudo crear la entidad',
                     'url' => base_url('/listaEntidades'),
                 ];
                 return  $this->response->setJSON($respuesta);
             }
-            $respuesta = [
-                'exito' => 'noOk',
-                'msj' => 'No se pudo crear la entidad',
-                'url' => base_url('/listaEntidades'),
-            ];
-            return  $this->response->setJSON($respuesta);
         }
         $usuarios = new UserModel();
         $data['representantes'] = $usuarios->findAll();
@@ -113,6 +155,7 @@ class EntidadController extends BaseController
             $entidad['encargado'] = $encargado;
             $entidadesConEncargados[] = $entidad;
         }
+
 
         $data['entidades'] = $entidadesConEncargados;
 

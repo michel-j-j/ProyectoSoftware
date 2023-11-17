@@ -1,6 +1,3 @@
 app/Config/Database.php
-<<<<<<< HEAD
-system
-=======
->>>>>>> e4a26e086fe807697d115caeeeaed5c7853b878e
-writable
+system/
+writable/

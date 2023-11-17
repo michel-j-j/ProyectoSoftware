@@ -5,7 +5,7 @@
 use App\Models\UserModel;
 
 $userModel = new UserModel();
-$user = $userModel->where('id_usuario', $_SESSION['id'])->first();
+$user = $userModel->where('id', $_SESSION['id'])->first();
 ?>
 
 <head>
@@ -20,8 +20,9 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
 
     <link href="<?= base_url('assets/img/logo.png') ?>" rel="shortcut icon">
     <!-- Favicons -->
-    <link href="<?= base_url('assets/img/favicon.png') ?>" rel="icon">
-    <link href="<?= base_url('assets/img/apple-touch-icon.png') ?>" rel="apple-touch-icon">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="shortcut icon" type="image/ico" href="assets/icons/logo.png">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -35,8 +36,12 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
     <link href="<?= base_url('/assets/vendor/remixicon/remixicon.css') ?>" rel="stylesheet">
     <link href="<?= base_url('/assets/vendor/simple-datatables/style.css') ?>" rel="stylesheet">
 
+
     <link href="<?= base_url('/assets/css/style.css') ?>" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <?= $this->renderSection('title') ?>
 </head>
 
 <body>
@@ -195,7 +200,6 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
             </li><!-- End Dashboard Nav -->
 
 
-
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-journal-text"></i><span>Documentacion</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -267,7 +271,7 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
     <footer id="footer" class="footer">
         <!--
         <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+            <p>&copy; 2023 Perdí Mi Billetera</p>
         </div>
         <div class="credits">
         </div>
