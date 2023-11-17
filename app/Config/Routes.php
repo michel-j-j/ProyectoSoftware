@@ -52,3 +52,5 @@ $routes->post('modificar', 'PerfilController::modificarPerfil');
 $routes->post('modificarContra', 'PerfilController::modificarContrasena');
 
 $routes->get('configuracion', 'PerfilController::configuracionPerfil');
+
+$routes->get('cerrarSesion', 'PerfilController::cerrarSesion');

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\HTTP\ResponseInterface;
 use Exception;
 
@@ -73,7 +74,13 @@ class PerfilController extends BaseController
             return $this->response->setJSON($retorno);
         }
     }
+    function cerrarSesion():RedirectResponse
+    {
+        $session = \Config\Services::session();
+        $session->destroy();
 
+        return redirect()->to(base_url('login')); 
+    }
     function modificarContrasena():ResponseInterface
     {
         $retorno = [

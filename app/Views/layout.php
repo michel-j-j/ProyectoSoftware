@@ -121,10 +121,6 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li class="dropdown-footer">
-                            <a href="#">Show all notifications</a>
-                        </li>
-
                     </ul><!-- End Notification Dropdown Items -->
 
                 </li><!-- End Notification Nav -->
@@ -132,7 +128,7 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src=<?= base_url('assets/img/profile-img.png')?> alt="Perfil " class="rounded-circle">
+                        <img src=<?= base_url('assets/img/profile-img.png') ?> alt="Perfil " class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $user['nombre'] . ' ' . $user['apellido'] ?></span>
                     </a><!-- End Profile Iamge Icon -->
 
@@ -162,7 +158,7 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
                         </li>
 
                         <li>
-                            <form action='<?php echo base_url('perfil') ?>' method="GET">
+                            <form action='<?= base_url('perfil') ?>' method="GET">
                                 <button class="dropdown-item d-flex align-items-center" href='<?php echo base_url('perfil') ?>' type="submit" name="menu" value="1">
                                     <i class="bi bi-gear"></i>
                                     <span>Configuracion de Cuenta</span>
@@ -170,10 +166,12 @@ $user = $userModel->where('id_usuario', $_SESSION['id'])->first();
                             </form>
                         </li>
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Cerrar Sesion</span>
-                            </a>
+                            <form action='<?= base_url('cerrarSesion') ?>' method="GET">
+                                <button class="dropdown-item d-flex align-items-center" type="submit">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Cerrar Sesion</span>
+                                </a>
+                            </form>
                         </li>
 
                     </ul><!-- End Profile Dropdown Items -->
