@@ -51,7 +51,7 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
         <div class="d-flex align-items-center justify-content-between">
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href=<?= base_url($_SESSION['index']) ?> class="logo d-flex align-items-center">
             <span>&nbsp;&nbsp;</span>
             <span class="d-none d-lg-block">Perdi Mi Billetera</span>
         </a>
@@ -175,7 +175,7 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
                                 <button class="dropdown-item d-flex align-items-center" type="submit">
                                     <i class="bi bi-box-arrow-right"></i>
                                     <span>Cerrar Sesion</span>
-                                </a>
+                                    </a>
                             </form>
                         </li>
 
@@ -193,7 +193,7 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href=<?= base_url($_SESSION['index']) ?>>
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -210,6 +210,12 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
                             <i class="bi bi-circle"></i><span>Cargar nueva documentacion</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('/administrarTipoDocumentacion') ?>">
+                            <i class="bi bi-circle"></i><span>Administrar tipos de documentacion</span>
+                        </a>
+                    </li>
+
                 </ul>
             </li><!-- End Forms Nav -->
 
@@ -228,11 +234,6 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
                             <i class="bi bi-circle"></i><span>Listado/modificar usuario</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="charts-echarts.html">
-                            <i class="bi bi-circle"></i><span>ECharts</span>
-                        </a>
-                    </li>
                 </ul>
             </li><!-- End Charts Nav -->
 
@@ -247,19 +248,31 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
                         </a>
                     </li>
                     <li>
-                        <a href="icons-remix.html">
-                            <i class="bi bi-circle"></i><span>Remix Icons</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="icons-boxicons.html">
-                            <i class="bi bi-circle"></i><span>Boxicons</span>
+                        <a href="<?= base_url('/listadoDenuncias') ?>">
+                            <i class="bi bi-circle"></i><span>Lista de denuncias de usuarios</span>
                         </a>
                     </li>
                 </ul>
             </li><!-- End Icons Nav -->
 
             <li class="nav-heading"></li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Entidades</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href=<?= base_url('/nuevaEntidad') ?>>
+                            <i class="bi bi-circle"></i><span>Nueva Entidad</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=<?= base_url('/listaEntidades') ?>>
+                            <i class="bi bi-circle"></i><span>Listado de Entidades</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
         </ul>

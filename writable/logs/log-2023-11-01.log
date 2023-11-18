@@ -546,6 +546,7 @@ in SYSTEMPATH\Database\BaseConnection.php on line 646.
 INFO - 2023-11-01 19:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-01 19:16:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 <<<<<<< HEAD
+<<<<<<< HEAD
 INFO - 2023-11-01 20:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 ERROR - 2023-11-01 20:25:18 --> mysqli_sql_exception: Duplicate entry '12312312' for key 'dni' in C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:306
 Stack trace:
@@ -1020,3 +1021,11 @@ in APPPATH\Views\entities\entitiesList.php on line 49.
 >>>>>>> origin/jona
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+=======
+INFO - 2023-11-01 20:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 20:02:43 --> Class 'Config\FilterSession' not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('forms/formDocumentacion', 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+>>>>>>> origin/leo

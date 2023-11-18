@@ -20,6 +20,11 @@ class ControladorPrincipal extends BaseController
     {
         return view('dashboard_User');
     }
+
+    public function dashboardAdministrador()
+    {
+        return view('dashboard_Admin');
+    }
     public function agregarDocumentos()
     {
 

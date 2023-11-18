@@ -9,7 +9,7 @@ use Exception;
 
 class LoginController extends BaseController
 {
-    public function login(): String
+    public function login(): string
     {
 
         return view('pages/login');
@@ -30,10 +30,9 @@ class LoginController extends BaseController
 
         $retorno = [
             'estado' => 'error',
-            'msj'    => 'Email y/o contraseña erroneo.',
-            'url'    =>  base_url('/')
+            'msj' => 'Email y/o contraseña erroneo.',
+            'url' => base_url('/')
         ];
-
         try {
             $userModel = new UserModel();
             $tipoRol = '';
@@ -47,16 +46,21 @@ class LoginController extends BaseController
 
                     if ($user['id_rol'] == 1) {
                         $tipoRol = 'Administrador';
+                        $index = 'dashboard/admin';
                     } else {
                         $tipoRol = 'Ciudadano';
+                        $index = 'dashboard/user';
                     }
+
+                    $retorno['url'] = base_url($index);
 
                     $data = ([
                         'id' => $user['id'],
                         'nombre' => $user['nombre'],
                         'apellido' => $user['apellido'],
                         'tipo_rol' => $tipoRol,
-                        'rol' => $user['id_rol']
+                        'rol' => $user['id_rol'],
+                        'index' => $index
                     ]);
                     $session = session();
                     $session->set($data);
@@ -69,11 +73,12 @@ class LoginController extends BaseController
                 }
             }
 
-            return   $this->response->setJSON($retorno);
+            return $this->response->setJSON($retorno);
         } catch (Exception $e) {
+
             $retorno['msj'] = $e->getMessage();
 
-            return   $this->response->setJSON($retorno);
+            return $this->response->setJSON($retorno);
         }
     }
 
@@ -81,8 +86,8 @@ class LoginController extends BaseController
     {
         $retorno = [
             'estado' => 'error',
-            'msj'    => 'Error en el back',
-            'url'    =>  base_url('/login')
+            'msj' => 'Error en el back',
+            'url' => base_url('/login')
         ];
 
         try {
@@ -109,7 +114,7 @@ class LoginController extends BaseController
                 'sobre_mi'        => $sobre,
                 'email'           => $email,
                 'dni'             => $dni,
-                'fecha_nacimiento'=> $fecha,
+                'fecha_nacimiento' => $fecha,
                 'telefono'        => $telefono,
                 'contraseña'      => $contra
             ];
