@@ -11,7 +11,7 @@ use CodeIgniter\Router\RouteCollection;
 //PRUEBAS CON DASHBOARD Y CARGAR DOCUMENTACION DESDE EL USUARIO
 $routes->get('/', 'ControladorPrincipal::index');
 $routes->get('/dashboard/user', 'ControladorPrincipal::dashboardUsuario');
-$routes->get('/dashboard/administrator', 'ControladorPrincipal::dashboardAdministrador');
+$routes->get('/dashboard/admin', 'ControladorPrincipal::dashboardAdministrador');
 $routes->get('/user/cargarDocumentacion', 'ControladorPrincipal::agregarDocumentos');
 $routes->post('/user/cargarDoc', 'ControladorPrincipal::agregarDoc');
 //FIN PRUEBA
@@ -33,13 +33,19 @@ $routes->post('/eliminarEntidad', 'EntidadController::eliminarEntidad');
 
 $routes->get('/login', 'LoginController::login');
 $routes->post('/login/logear', 'LoginController::logear');
-$routes->get('pantallaTesting', 'ControladorPrincipal::index');
-
 $routes->get('/registrar', 'LoginController::registrar');
 $routes->post('/registrar/registrarse', 'LoginController::registrarse');
 
+$routes->get('/recuperar', 'LoginController::recuperar');
+$routes->post('/recuperar/recuperarse', 'LoginController::recuperarse');
+
 $routes->get('forms/formDocumentacion', 'DocumentacionController::formularioDocumentacion');
 $routes->post('insertarDocumentacion', 'DocumentacionController::insertarDocumentacion');
+$routes->get('listarDocumentacion/(:num)', 'DocumentacionController::listarDocumentacion/$1');
+$routes->post('eliminarDocumentacion', 'DocumentacionController::eliminarDocumentacion');
+$routes->get('modificarDocumento/(:num)', 'DocumentacionController::modificarDocumentacion/$1');
+$routes->post('modificarDocumento', 'DocumentacionController::modificarDocumentacion');
+
 
 $routes->get('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');
 $routes->post('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');
@@ -52,3 +58,23 @@ $routes->post('forms/eliminarUsuario/', 'UserController::eliminarUsuario/');
 
 $routes->get('seleccionarUsuarioDenuncia', 'DenunciaController::seleccionarUsuarioDenuncia');
 $routes->post('administrarDenuncias', 'DenunciaController::administrarDenunciasActivas');
+
+$routes->get('perfil', 'PerfilController::perfil');
+
+$routes->post('modificar', 'PerfilController::modificarPerfil');
+
+$routes->post('modificarContra', 'PerfilController::modificarContrasena');
+
+$routes->get('configuracion', 'PerfilController::configuracionPerfil');
+
+$routes->get('cerrarSesion', 'PerfilController::cerrarSesion');
+$routes->post('cambiarEstadoDocumentacion', 'DocumentacionController::cambiarEstadoDocumentacion');
+
+$routes->get('listadoDenuncias', 'DenunciaController::listadoDenuncias');
+
+$routes->get('administrarTipoDocumentacion', 'TipoDocumentacionController::administrarTipoDocumentacion');
+$routes->post('administrarTipoDocumentacion', 'TipoDocumentacionController::administrarTipoDocumentacion');
+
+$routes->post('eliminarTipoDocumentacion', 'TipoDocumentacionController::eliminarTipoDocumentacion');
+
+$routes->get('documentacionAsociada/(:num)', 'DenunciaController::documentacionAsociada/$1');

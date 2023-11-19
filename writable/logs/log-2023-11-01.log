@@ -545,6 +545,71 @@ in SYSTEMPATH\Database\BaseConnection.php on line 646.
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 INFO - 2023-11-01 19:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-01 19:16:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+<<<<<<< HEAD
+<<<<<<< HEAD
+INFO - 2023-11-01 20:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-01 20:25:18 --> mysqli_sql_exception: Duplicate entry '12312312' for key 'dni' in C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\TrabajoFinalProyecto\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\TrabajoFinalProyecto\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\TrabajoFinalProyecto\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\TrabajoFinalProyecto\app\Controllers\LoginController.php(97): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->registrarse()
+#9 C:\xampp\htdocs\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\xampp\htdocs\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\TrabajoFinalProyecto\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-01 20:25:18 --> Duplicate entry '12312312' for key 'dni'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`nombre`, `apellido`, `email`, `dni`) VALUES (:nombre:, :apellido:, :email:, :dni:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\LoginController.php(97): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->registrarse()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-01 20:25:37 --> mysqli_sql_exception: Duplicate entry '12312312' for key 'dni' in C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\TrabajoFinalProyecto\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\TrabajoFinalProyecto\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\TrabajoFinalProyecto\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\TrabajoFinalProyecto\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\TrabajoFinalProyecto\app\Controllers\LoginController.php(97): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->registrarse()
+#9 C:\xampp\htdocs\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\xampp\htdocs\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\TrabajoFinalProyecto\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-01 20:25:37 --> Duplicate entry '12312312' for key 'dni'
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `usuario` (`nombre`, `apellido`, `email`, `dni`) VALUES (:nombre:, :apellido:, :email:, :dni:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\LoginController.php(97): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->registrarse()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-01 21:05:54 --> unlink(C:\xampp\htdocs\TrabajoFinalProyecto\writable\debugbar/debugbar_1698866056.410139.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698866056.410139.json): No such file or directory', 'C:\\xampp\\htdocs\\TrabajoFinalProyecto\\system\\Debug\\Toolbar\\Collectors\\History.php', 78)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(78): unlink('C:\\xampp\\htdocs\\TrabajoFinalProyecto\\writable\\debugbar/debugbar_1698866056.410139.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1698872750.168054', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(476): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(152): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(434): CodeIgniter\Events\Events::trigger('pre_system')
+=======
 CRITICAL - 2023-11-01 20:21:45 --> syntax error, unexpected token "<<", expecting "]"
 in APPPATH\Config\Database.php on line 31.
  1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyecto\\ProyectoSoftware\\app\\Config\\Database.php')
@@ -953,5 +1018,14 @@ in APPPATH\Views\entities\entitiesList.php on line 49.
  5 APPPATH\Controllers\EntidadController.php(120): view('entities/entitiesList', [...])
  6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\EntidadController->entidadesList()
  7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntidadController))
+>>>>>>> origin/jona
  8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+=======
+INFO - 2023-11-01 20:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-01 20:02:43 --> Class 'Config\FilterSession' not found
+in SYSTEMPATH\Filters\Filters.php on line 173.
+ 1 SYSTEMPATH\CodeIgniter.php(466): CodeIgniter\Filters\Filters->run('forms/formDocumentacion', 'before')
+ 2 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+>>>>>>> origin/leo

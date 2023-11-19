@@ -53,6 +53,7 @@ class DocumentacionController extends BaseController
         }
 
         return redirect()->to('/forms/formDocumentacion');
+
     }
 
     public function formularioDocumentacion()
@@ -93,11 +94,12 @@ class DocumentacionController extends BaseController
             }
 
             return view('forms/listaDocumentacionDeUsuario', $data);
+        } else {
+            //retornar mensaje con "no hay documentacion para administrar
+            //    return view('forms/listaDocumentacionDeUsuario', $data);
+            //}
+            return view('seccionDocumentacion/sinDocumentacion');
         }
-        //  else {
-        //retornar mensaje con "no hay documentacion para administrar
-        //    return view('forms/listaDocumentacionDeUsuario', $data);
-        //}
     }
 
     public function denunciarDocumentacion($id = null): string
@@ -172,6 +174,7 @@ class DocumentacionController extends BaseController
         ];
 
         return view('forms/editarDocumentacion', $data);
+
     }
 
     public function eliminarDocumentacion()
@@ -225,6 +228,11 @@ class DocumentacionController extends BaseController
 
 
             return redirect()->to('/seleccionarUsuarioDenuncia');
+
+
         }
+
+
     }
+    
 }

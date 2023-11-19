@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+<?php
+
+use App\Models\UserModel;
+
+$userModel = new UserModel();
+$user = $userModel->where('id', $_SESSION['id'])->first();
+?>
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard - Perdi mi Billetera</title>
+    <title>Perfil</title>
 
     <meta content="" name="description">
     <meta content="" name="keywords">
 
+
+    <link href="<?= base_url('assets/img/logo.png') ?>" rel="shortcut icon">
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -37,32 +46,18 @@
 
 <body>
 
-    <header id="header" class="header fixed-top d-flex align-items-center">
+    <header id="header" class="header fixed-top d-flex align-items-center m-2">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-
-                <span> <img src="assets/icons/logo.png" alt="logo"></span> <!-- agregarle un href a pagina ppal-->
-
-            </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
-
-        <div class="search-bar">
-            <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-            </form>
-        </div><!-- End Search Bar -->
-
+        <a href=<?= base_url($_SESSION['index']) ?> class="logo d-flex align-items-center">
+            <span>&nbsp;&nbsp;</span>
+            <span class="d-none d-lg-block">Perdi Mi Billetera</span>
+        </a>
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
-
-                <li class="nav-item d-block d-lg-none">
-                    <a class="nav-link nav-icon search-bar-toggle " href="#">
-                        <i class="bi bi-search"></i>
-                    </a>
-                </li><!-- End Search Icon-->
+                <!-- End Search Icon-->
 
                 <li class="nav-item dropdown">
 
@@ -131,131 +126,57 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li class="dropdown-footer">
-                            <a href="#">Show all notifications</a>
-                        </li>
-
                     </ul><!-- End Notification Dropdown Items -->
 
                 </li><!-- End Notification Nav -->
 
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <i class="bi bi-chat-left-text"></i>
-                        <span class="badge bg-success badge-number">3</span>
-                    </a><!-- End Messages Icon -->
-
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-                        <li class="dropdown-header">
-                            You have 3 new messages
-                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="message-item">
-                            <a href="#">
-                                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                                <div>
-                                    <h4>Maria Hudson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>4 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="message-item">
-                            <a href="#">
-                                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                                <div>
-                                    <h4>Anna Nelson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>6 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="message-item">
-                            <a href="#">
-                                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                                <div>
-                                    <h4>David Muldon</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>8 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="dropdown-footer">
-                            <a href="#">Show all messages</a>
-                        </li>
-
-                    </ul><!-- End Messages Dropdown Items -->
-
-                </li><!-- End Messages Nav -->
-
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <img src=<?= base_url('assets/img/profile-img.png') ?> alt="Perfil " class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $user['nombre'] . ' ' . $user['apellido'] ?></span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
+
+                            <h6><?php echo $user['nombre'] . ' ' . $user['apellido'] ?></h6>
+                            <span>
+                                <?php
+                                echo $_SESSION['tipo_rol']
+                                ?></span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+
+                            <a class="dropdown-item d-flex align-items-center" href='<?php echo base_url('perfil') ?>'>
                                 <i class="bi bi-person"></i>
-                                <span>My Profile</span>
+                                <span>Mi Perfil</span>
                             </a>
+
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                                <i class="bi bi-gear"></i>
-                                <span>Account Settings</span>
-                            </a>
+                            <form action='<?= base_url('perfil') ?>' method="GET">
+                                <button class="dropdown-item d-flex align-items-center" href='<?php echo base_url('perfil') ?>' type="submit" name="menu" value="1">
+                                    <i class="bi bi-gear"></i>
+                                    <span>Configuracion de Cuenta</span>
+                                    </a>
+                            </form>
                         </li>
                         <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                                <i class="bi bi-question-circle"></i>
-                                <span>Need Help?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </a>
+                            <form action='<?= base_url('cerrarSesion') ?>' method="GET">
+                                <button class="dropdown-item d-flex align-items-center" type="submit">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Cerrar Sesion</span>
+                                    </a>
+                            </form>
                         </li>
 
                     </ul><!-- End Profile Dropdown Items -->
@@ -267,94 +188,17 @@
     </header><!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+    <aside id="sidebar" class="sidebar m-2">
 
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href=<?= base_url($_SESSION['index']) ?>>
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="components-alerts.html">
-                            <i class="bi bi-circle"></i><span>Alerts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-accordion.html">
-                            <i class="bi bi-circle"></i><span>Accordion</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-badges.html">
-                            <i class="bi bi-circle"></i><span>Badges</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-breadcrumbs.html">
-                            <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-buttons.html">
-                            <i class="bi bi-circle"></i><span>Buttons</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-cards.html">
-                            <i class="bi bi-circle"></i><span>Cards</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-carousel.html">
-                            <i class="bi bi-circle"></i><span>Carousel</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-list-group.html">
-                            <i class="bi bi-circle"></i><span>List group</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-modal.html">
-                            <i class="bi bi-circle"></i><span>Modal</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-tabs.html">
-                            <i class="bi bi-circle"></i><span>Tabs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-pagination.html">
-                            <i class="bi bi-circle"></i><span>Pagination</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-progress.html">
-                            <i class="bi bi-circle"></i><span>Progress</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-spinners.html">
-                            <i class="bi bi-circle"></i><span>Spinners</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="components-tooltips.html">
-                            <i class="bi bi-circle"></i><span>Tooltips</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Components Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -367,40 +211,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="forms-layouts.html">
-                            <i class="bi bi-circle"></i><span>Form Layouts</span>
+                        <a href="<?= base_url('/administrarTipoDocumentacion') ?>">
+                            <i class="bi bi-circle"></i><span>Administrar tipos de documentacion</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="forms-editors.html">
-                            <i class="bi bi-circle"></i><span>Form Editors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-validation.html">
-                            <i class="bi bi-circle"></i><span>Form Validation</span>
-                        </a>
-                    </li>
+
                 </ul>
             </li><!-- End Forms Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Entidades</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href=<?= base_url('/nuevaEntidad') ?>>
-                            <i class="bi bi-circle"></i><span>Nueva Entidad</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href=<?= base_url('/listaEntidades') ?>>
-                            <i class="bi bi-circle"></i><span>Listado de Entidades</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Tables Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -417,11 +234,6 @@
                             <i class="bi bi-circle"></i><span>Listado/modificar usuario</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="charts-echarts.html">
-                            <i class="bi bi-circle"></i><span>ECharts</span>
-                        </a>
-                    </li>
                 </ul>
             </li><!-- End Charts Nav -->
 
@@ -436,68 +248,32 @@
                         </a>
                     </li>
                     <li>
-                        <a href="icons-remix.html">
-                            <i class="bi bi-circle"></i><span>Remix Icons</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="icons-boxicons.html">
-                            <i class="bi bi-circle"></i><span>Boxicons</span>
+                        <a href="<?= base_url('/listadoDenuncias') ?>">
+                            <i class="bi bi-circle"></i><span>Lista de denuncias de usuarios</span>
                         </a>
                     </li>
                 </ul>
             </li><!-- End Icons Nav -->
 
-            <li class="nav-heading">Pages</li>
-
+            <li class="nav-heading"></li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
-                    <i class="bi bi-person"></i>
-                    <span>Profile</span>
+                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-layout-text-window-reverse"></i><span>Entidades</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li><!-- End Profile Page Nav -->
+                <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href=<?= base_url('/nuevaEntidad') ?>>
+                            <i class="bi bi-circle"></i><span>Nueva Entidad</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=<?= base_url('/listaEntidades') ?>>
+                            <i class="bi bi-circle"></i><span>Listado de Entidades</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-faq.html">
-                    <i class="bi bi-question-circle"></i>
-                    <span>F.A.Q</span>
-                </a>
-            </li><!-- End F.A.Q Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-contact.html">
-                    <i class="bi bi-envelope"></i>
-                    <span>Contact</span>
-                </a>
-            </li><!-- End Contact Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-register.html">
-                    <i class="bi bi-card-list"></i>
-                    <span>Register</span>
-                </a>
-            </li><!-- End Register Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-login.html">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Login</span>
-                </a>
-            </li><!-- End Login Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-error-404.html">
-                    <i class="bi bi-dash-circle"></i>
-                    <span>Error 404</span>
-                </a>
-            </li><!-- End Error 404 Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-blank.html">
-                    <i class="bi bi-file-earmark"></i>
-                    <span>Blank</span>
-                </a>
-            </li><!-- End Blank Page Nav -->
 
         </ul>
 
@@ -506,16 +282,13 @@
     <?= $this->renderSection('content') ?>
 
     <footer id="footer" class="footer">
+        <!--
         <div class="copyright">
             <p>&copy; 2023 Perdí Mi Billetera</p>
         </div>
         <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-
         </div>
+          -->
         <script src="<?= base_url('/assets/vendor/apexcharts/apexcharts.min.js') ?>"></script>
         <script src="<?= base_url('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
         <script src="<?= base_url('/assets/vendor/chart.js/chart.umd.js') ?>"></script>
@@ -525,11 +298,22 @@
         <script src="<?= base_url('/assets/vendor/tinymce/tinymce.min.js') ?>"></script>
         <script src="<?= base_url('/assets/vendor/php-email-form/validate.js') ?>"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
+        <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
         <!-- Template Main JS File -->
         <script src="<?= base_url('/assets/js/main.js') ?>"></script>
-        <?= $this->renderSection('footer'); ?>
+        <script src="<?= base_url('/assets/js/perfil.js') ?>"></script>
+        <?php
+        if (isset($_GET)) {
+            if (isset($_GET['menu'])) {
+                echo "<script>
+      $(document).ready(function() {
+          $('#editarPerfil').click();
+      });
+      </script>";
+            }
+        }
+        ?>
     </footer><!-- End Footer -->
 
 </body>

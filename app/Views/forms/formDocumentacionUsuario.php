@@ -60,7 +60,7 @@
                                                 <label for="fecha_vencimiento" class="form-label">Fecha vencimiento</label>
                                                 <input type="date" class="form-control" name="fecha_vencimiento">
                                             </div>
-                                            <input type="hidden" name="id_usuario" value="2">
+                                            <input type="hidden" name="id_usuario" value="<?= $_SESSION['id'] ?> ">
                                             <div class="text-center">
                                                 <a href="<?php echo base_url('/dashboard/user') ?> "> <button type="button" class="btn btn-danger">Volver</button></a>
                                                 <button type="reset" class="btn btn-warning">Reiniciar campos</button>
