@@ -100,6 +100,37 @@ class DocumentacionController extends BaseController
         //}
     }
 
+    public function denunciarDocumentacion($id = null): string
+    {
+        $documentacion = new DocumentoModel();
+        $tipoDocumentacion = new TipoDocumentacionModel();
+        $tipoEntidad = new EntidadesModel();
+        $documentacion = $documentacion->obtenerDocumentacionPorUsuario($id);
+        $i = 0;
+
+        if ($documentacion != null) {
+            foreach ($documentacion as $documento) {
+                $data['data'][$i]['id'] = $documento['id'];
+                $data['data'][$i]['numero'] = $documento['numero'];
+                $data['data'][$i]['fecha_vencimiento'] = $documento['fecha_vencimiento'];
+                $data['data'][$i]['id_usuario'] = $documento['id_usuario'];
+                $data['data'][$i]['id_entidad'] = $documento['id_entidad'];
+                $data['data'][$i]['id_tipo_documentacion'] = $documento['id_tipo_documentacion'];
+                $data['data'][$i]['nombre'] = $documento['nombre'];
+                $data['data'][$i]['fecha_emision'] = $documento['fecha_emision'];
+                $data['data'][$i]['nombreEntidad'] = $tipoEntidad->recuperarNombreEntidadPorId($documento['id_entidad']);
+                $data['data'][$i]['nombreTipoDocumentacion'] = $tipoDocumentacion->obtenerNombrePorId($documento['id_tipo_documentacion']);
+                $i++;
+            }
+
+            return view('forms/documentacionDeUsuario', $data);
+        }
+        //  else {
+        //retornar mensaje con "no hay documentacion para administrar
+        //    return view('forms/listaDocumentacionDeUsuario', $data);
+        //}
+    }
+
     public function modificarDocumentacion($id = null)
     {
         $documentoModel = new DocumentoModel();
