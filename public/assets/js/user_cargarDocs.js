@@ -1,8 +1,6 @@
 $(document).ready(function(){
-    console.log("Holaa");
     $('#agregarDocumentacion').submit(function (e) {
         e.preventDefault();
-        console.log("Entro al js");
 
         Swal.fire({
             title: "¿Desea enviar el documento?",

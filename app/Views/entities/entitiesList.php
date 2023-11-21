@@ -32,11 +32,17 @@
 
                     <div class="card">
                         <div class="card-body">
-                        <h5 class="card-title">Listado Entidades</h5>
 
-                            <div class="card-title" style="text-align: right;"><a href="<?php echo base_url('nuevaEntidad') ?>" class="btn btn-primary float-right">Nueva Entidad</a></div><br>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h5 class="card-title">Listado Entidades</h5>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card-title" style="text-align: right;"><a href="<?php echo base_url('nuevaEntidad') ?>" class="btn btn-primary float-right">Nueva Entidad</a></div><br>
 
-                            <table class="table table-hover">
+                                </div>
+                            </div>
+                            <table class="table table-hover table-light">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -50,8 +56,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-
                                     <? //php echo var_dump($entidades);
                                     //die;
                                     ?>

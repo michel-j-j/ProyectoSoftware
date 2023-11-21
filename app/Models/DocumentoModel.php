@@ -45,7 +45,7 @@ class DocumentoModel extends Model
     {
         $documentacion = $this->query("SELECT d.*, ed.descripcion estado FROM documentacion d JOIN denuncia_documentacion dd 
         ON d.id = dd.id_documentacion JOIN denuncia den ON dd.id_denuncia = den.id 
-        JOIN estado_documentacion ed on ed.id_estado_documentacion = d.id_estado_documentacion 
+        JOIN estado_documentacion ed on ed.id = d.id_estado_documentacion 
         WHERE den.id = $idDenuncia;");
 
         return $documentacion->getResultArray();
@@ -87,6 +87,26 @@ class DocumentoModel extends Model
 
         return $estado;
     }
+    public function obtenerIdPorNombreEstado($nombre)
+    {
+        $estado = null;
+        switch ($nombre) {
+            case "Activo":
+                $estado = "1";
+                break;
+            case "Denunciado":
+                $estado = "2";
+                break;
+            case "En recuperacion":
+                $estado = "3";
+                break;
+            case "Recuperado":
+                $estado = "4";
+                break;
+        }
+
+        return $estado;
+    }
     public function obtenerDocumentacionPorDenuncia($id)
     {
 
@@ -95,5 +115,26 @@ class DocumentoModel extends Model
             return $this->query("SELECT d.* FROM documentacion d JOIN denuncia_documentacion dd ON dd.id_documentacion = d.id JOIN denuncia den ON den.id = dd.id_denuncia WHERE den.id = $id;")->getResultArray();
         }
         return null;
+    }
+
+    public function obtenerEstadoDocumentoPorNombre($nombre)
+    {
+        $estado = null;
+        switch ($nombre) {
+            case "Activo":
+                $estado = "1";
+                break;
+            case "Denunciado":
+                $estado = "2";
+                break;
+            case "En recuperacion":
+                $estado = "3";
+                break;
+            case "Recuperado":
+                $estado = "4";
+                break;
+        }
+
+        return $estado;
     }
 }

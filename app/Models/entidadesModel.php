@@ -14,12 +14,12 @@ class EntidadesModel extends Model
 
     public function recuperarIdPorNombreEntidad($nombreEntidad)
     {
-        $idEntidad = $this->select('id_entidad')->getWhere(['nombre' => $nombreEntidad])->getRow();
-        return $idEntidad->id_entidad;
+        $idEntidad = $this->select('id')->getWhere(['nombre' => $nombreEntidad])->getRow();
+        return $idEntidad->id;
     }
     public function recuperarNombreEntidadPorId($idEntidad)
     {
-        $nombreEntidad = $this->select('nombre')->getWhere(['id_entidad' => $idEntidad])->getRow();
+        $nombreEntidad = $this->select('nombre')->getWhere(['id' => $idEntidad])->getRow();
         return $nombreEntidad->nombre;
     }
 }

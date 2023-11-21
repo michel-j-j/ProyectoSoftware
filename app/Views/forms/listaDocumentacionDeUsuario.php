@@ -71,16 +71,10 @@
                                                                 <?php echo $documento['numero'] ?>
                                                             </td>
                                                             <td>
-                                                                <a href="<?php echo base_url('modificarDocumento/') ?><?php echo $documento['id']; ?>"
-                                                                    class="btn btn-warning float-right">Modificar</a>
-
-                                                                <form class="eliminarDocumento" style="display: inline;"
-                                                                    action="<?= base_url('eliminarDocumentacion') ?>"
-                                                                    method="POST">
-                                                                    <input type="hidden" name="id_eliminar"
-                                                                        value="<?php echo $documento['id']?>">
-                                                                    <button type="submit"
-                                                                        class="btn btn-danger">Eliminar</button>
+                                                                <a href="<?php echo base_url('modificarDocumento/') ?><?php echo $documento['id']; ?>" class="btn btn-warning float-right">Modificar</a>
+                                                                <form class="eliminarDocumento" style="display: inline;" action="<?= base_url('eliminarDocumentacion') ?>" method="POST">
+                                                                    <input type="hidden" name="id_eliminar" value="<?php echo $documento['id']?>">
+                                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
                                                                 </form>
                                                             </td>
                                                         </tr>

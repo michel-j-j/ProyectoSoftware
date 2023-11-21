@@ -1,17 +1,12 @@
 <?= $this->extend('layout') ?>
 <?= $this->section('content') ?>
 
-
-
-
-
-
 <main id="main" class="main">
     <div class="pagetitle">
         <h1>Cargar documentacion</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href=<?=base_url($_SESSION['index'])?>>Inicio</a></li>
                 <li class="breadcrumb-item">Documentacion</li>
                 <li class="breadcrumb-item active">Cargar documentacion</li>
             </ol>
@@ -20,18 +15,13 @@
 
     <section class="section">
         <div class="row">
-
             <!-- Lista de usuarios -->
-            <div class="col-lg-6">
-                <section class="section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
+            <div class="col-lg-8">
+            <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Usuarios</h5>
                                     <!-- Table with stripped rows -->
-                                    <div
-                                        class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
+                                    <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
                                         <div class="datatable-top">
                                             <div class="datatable-dropdown">
                                                 <label>
@@ -46,8 +36,7 @@
                                             </div>
 
                                             <div class="datatable-search">
-                                                <input class="datatable-input" placeholder="Search..." type="search"
-                                                    title="Search within table">
+                                                <input class="datatable-input" placeholder="Search..." type="search" title="Search within table">
                                             </div>
 
                                         </div>
@@ -55,14 +44,10 @@
                                             <table class="table datatable datatable-table" id="dataTable">
                                                 <thead>
                                                     <tr>
-                                                        <th data-sortable="true" style="width: 15%;"><button
-                                                                class="datatable-sorter">Nombre</button></th>
-                                                        <th data-sortable="true" style="width: 15%;"><button
-                                                                class="datatable-sorter">Apellido</button></th>
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">DNI</button></th>
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">Email</button></th>
+                                                        <th data-sortable="true" style="width: 15%;"><button class="datatable-sorter">Nombre</button></th>
+                                                        <th data-sortable="true" style="width: 15%;"><button class="datatable-sorter">Apellido</button></th>
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">DNI</button></th>
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Email</button></th>
                                                         <th data-sortable="true" style="width: 10%;">Seleccionar</th>
                                                 </thead>
                                                 <tbody>
@@ -82,20 +67,17 @@
                                                                 <?php echo $usuario['email'] ?>
                                                             </td>
                                                             <td>
-                                                                <input class="form-check-input" type="radio"
-                                                                    name="id_usuario" value="<?= $usuario['email'] ?>"
-                                                                    id="radio<?= $usuario['id'] ?>">
+                                                                <input class="form-check-input" type="radio" name="id_usuario" value="<?= $usuario['email'] ?>" id="radio<?= $usuario['id'] ?>">
                                                             </td>
                                                             <td>
-                                                                <a href="<?php echo base_url('listarDocumentacion/') ?><?php echo $usuario['id']; ?>"
-                                                                    class="btn btn-warning float-right">Lista documentacion</a>
+                                                                <a href="<?php echo base_url('listarDocumentacion/') ?><?php echo $usuario['id']; ?>" class="btn btn-warning float-right">Lista documentacion</a>
                                                             </td>
                                                         </tr>
-                                                    </tbody>
-                                                    <?php $index = $index + 1; ?>
-                                                <?php } ?>
+                                                </tbody>
+                                                <?php $index = $index + 1; ?>
+                                            <?php } ?>
 
-                                                <!-- hacer un checkbox para seleccionar un usuario por lista -->
+                                            <!-- hacer un checkbox para seleccionar un usuario por lista -->
 
                                             </table>
                                         </div>
@@ -110,29 +92,17 @@
 
                                 </div>
                             </div>
+            </div>
 
-                        </div>
-                    </div>
-
-                </section>
-            </div class="col-lg-6">
-
-            <div class="col-lg-6">
-
-                <div class="col-lg-6">
-
-                    <div class="card">
-                        <div class="card-body">
-
-
-                            <h5 class="card-title">Agregar documentacion</h5>
+            <div class="col-lg-4">
+                <div class="card">
+                <div class="card-body">
+                <h5 class="card-title">Agregar documentacion</h5>
                             <!-- Vertical Form -->
-                            <form class="row g-3" id="insertarDocumentacion"
-                                action="<?= base_url('/insertarDocumentacion') ?>" method="POST">
+                            <form class="row g-3" id="insertarDocumentacion" action="<?= base_url('/insertarDocumentacion') ?>" method="POST">
                                 <div class="col-12">
                                     <label>Usuario</label>
-                                    <input type="text" class="form-control" id="usuarioSeleccionado"
-                                        name="usuario_seleccionado">
+                                    <input type="text" class="form-control" id="usuarioSeleccionado" name="usuario_seleccionado">
 
                                     <label for="nombre" class="form-label">Nombre de la
                                         tarjeta/identificacion</label>
@@ -170,8 +140,7 @@
                                 <div class="col-12">
                                     <label for="fecha_vencimiento" class="form-label">Fecha
                                         vencimiento</label>
-                                    <input type="date" class="form-control" id="fecha_vencimiento"
-                                        name="fecha_vencimiento">
+                                    <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento">
                                 </div>
 
 
@@ -186,13 +155,11 @@
                     </div>
                 </div>
                 </form>
-                <!-- Vertical Form -->
-
+                                    </div>
+                </div>
             </div>
         </div>
-        </div>
-        </div>
-        </div>
+
 
 
     </section>
@@ -204,15 +171,15 @@
 </main><!-- End #main -->
 <script>
     // Espera a que el documento esté completamente cargado
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         // Obtiene todos los radio buttons con el nombre 'id_usuario'
         const radioButtons = document.querySelectorAll('input[name="id_usuario"]');
         // Obtiene el campo de entrada del formulario
         const usuarioSeleccionadoInput = document.getElementById('usuarioSeleccionado');
 
         // Itera sobre los radio buttons y agrega un evento de cambio a cada uno
-        radioButtons.forEach(function (radioButton) {
-            radioButton.addEventListener('change', function () {
+        radioButtons.forEach(function(radioButton) {
+            radioButton.addEventListener('change', function() {
                 // Verifica si el radio button está marcado
                 if (radioButton.checked) {
                     // Actualiza el valor del campo de entrada con el valor del radio button seleccionado

@@ -86,10 +86,10 @@ class DenunciaModel extends Model
     {
         //recupera los datos del usuario, incluyendo los documentos asociados
         $queryDocumentacion = $this->query("SELECT u.nombre, u.apellido, u.email,doc.nombre AS nombre_documentacion, doc.numero, e.nombre AS 
-        entidad FROM documentacion doc JOIN entidad e ON e.id_entidad = doc.id_entidad 
+        entidad FROM documentacion doc JOIN entidad e ON e.id = doc.id_entidad 
         JOIN denuncia_documentacion dd ON dd.id_documentacion = doc.id JOIN denuncia d ON d.id = dd.id_denuncia 
         JOIN usuario u ON u.id = doc.id_usuario WHERE d.id = $idDenuncia;")->getResultArray();
-
+        
         return $queryDocumentacion;
     }
 }

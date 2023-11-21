@@ -10,6 +10,7 @@ use App\Models\EstadoDocumentacionModel;
 use App\Models\EstadoDenunciaModel;
 use App\Models\TipoDocumentacionModel;
 use App\Models\EntidadesModel;
+use App\Models\DenunciaDocumentacionModel;
 
 class DenunciaController extends BaseController
 {
@@ -44,7 +45,6 @@ class DenunciaController extends BaseController
                 ]);
                 $usuario->insert($data);
             }
-
         }
         return view('forms/form_user');
     }
@@ -130,18 +130,22 @@ class DenunciaController extends BaseController
                             }
                             $indiceDocumentacion++;
                         }
-
-
-
                         // --Fin loop documentacion--
+
+
+
                         //Almacenamos la denuncia activa, ya sea "En curso" o "Iniciada"
-                        $denunciasActivas[$indice] =
-                            [
-                                'id' => $row['id'],
-                                'id_usuario' => $row['id_usuario'],
-                                'estado' => $estado,
-                                'documentacion' => $documentacion
-                            ];
+                        if (isset($documentacion)) {
+
+
+                            $denunciasActivas[$indice] =
+                                [
+                                    'id' => $row['id'],
+                                    'id_usuario' => $row['id_usuario'],
+                                    'estado' => $estado,
+                                    'documentacion' => $documentacion
+                                ];
+                        }
                         $indice++;
                     }
                 } else {
@@ -158,7 +162,7 @@ class DenunciaController extends BaseController
     //Devuelve los estados de la denuncia
     //Denuncia: id, id_usuario, estado(string)
     //Denuncia['documentacion'] devuelve: nombre, apellido, email, nombre_documentacion. numero, entidad (nombre de la entidad)
-    public function listadoDenuncias()
+    /* public function listadoDenuncias()
     {
         $denunciaModel = new DenunciaModel();
         $denuncias = $denunciaModel->findAll();
@@ -174,6 +178,26 @@ class DenunciaController extends BaseController
             ];
             $indice++;
         }
+        return view('seccionDenuncias/listadoDenuncias', $data);
+    }*/
+    public function listadoDenuncias()
+    {
+        $denunciaModel = new DenunciaModel();
+        $denuncias = $denunciaModel->findAll();
+        $indice = 0;
+        $data = [''];
+        foreach ($denuncias as $denuncia) {
+            $datosDenuncia = $denunciaModel->datosDeLaDenuncia($denuncia['id']);
+            $data['data'][$indice] = [
+                'id' => $denuncia['id'],
+                'id_usuario' => $denuncia['id_usuario'],
+                'estado' => $denunciaModel->obtenerEstadoPorId($denuncia['id_estado_denuncia']),
+                    'documentacion' => $datosDenuncia
+            ];
+            $indice++;
+        }
+        var_dump($data);
+        die;
         return view('seccionDenuncias/listadoDenuncias', $data);
     }
 
@@ -199,7 +223,7 @@ class DenunciaController extends BaseController
                 $data['data'][$i]['nombreEntidad'] = $tipoEntidad->recuperarNombreEntidadPorId($documento['id_entidad']);
                 $data['data'][$i]['nombreTipoDocumentacion'] = $tipoDocumentacion->obtenerNombrePorId($documento['id_tipo_documentacion']);
                 $data['data'][$i]['estadoDocumentacion'] = $documentacionModel->obtenerEstadoDocumento($documento['id_estado_documentacion']);
-                
+
                 $i++;
             }
 
@@ -211,5 +235,38 @@ class DenunciaController extends BaseController
             return view('seccionDocumentacion/sinDocumentacion');
         }
     }
+    public function denunciarDocumentacion()
+    {
+        if ($_POST) {
 
+            $documentacionModel = new DocumentoModel();
+            $denunciaDocumentacionModel = new DenunciaDocumentacionModel();
+            $estadoDocumentacionModel = new EstadoDocumentacionModel();
+            $denunciaModel = new DenunciaModel();
+            //Inserto nueva denuncia
+            $idUsuario = $_SESSION['id'];
+            $denuncia = [
+                "id_usuario" => $idUsuario,
+                "id_estado_denuncia" => $denunciaModel->obtenerIdEstadoDenunciaPorNombre("Iniciada"),
+            ];
+            //Las 'opciones' son los ID de los documentos
+            $documentacionDenunciada = $_POST['opciones'];
+            $denunciaModel->insert($denuncia);
+            //Obtengo el ultimo ID de la denuncia para relacionar los documentos y actualizar sus estados
+            $idDenuncia = $denunciaModel->insertID();
+            foreach ($documentacionDenunciada as $idDocumento) {
+                $documentoEstadoActualizado = [
+                    "id_estado_documentacion" => $estadoDocumentacionModel->obtenerIdPorEstado("Denunciado")
+                ];
+                $documentacionModel->update($idDocumento, $documentoEstadoActualizado);
+                $documentoDenuncia = [
+                    "id_denuncia" => $idDenuncia,
+                    "id_documentacion" => $idDocumento
+                ];
+                $denunciaDocumentacionModel->insert($documentoDenuncia);
+            }
+            return redirect()->to(base_url($_SESSION['index']));
+        }
+        return;
+    }
 }

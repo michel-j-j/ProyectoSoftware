@@ -30,7 +30,7 @@
                                             <select class="form-select" name="nombreEntidad" required>
                                                 <option selected disabled value="">Seleccione entidad</option>
                                                 <?php foreach ($data['entidades'] as $entidad) { ?>
-                                                    <option value="<?php echo $entidad['id_entidad'] ?>">
+                                                    <option value="<?php echo $entidad['id'] ?>">
                                                         <?php echo $entidad['nombre'] ?>
                                                     </option>
                                                 <?php } ?>
@@ -39,7 +39,7 @@
                                             <select class="form-select" name="tipoDocumentacion" required>
                                                 <option selected disabled value="">Seleccione tipo de documentacion</option>
                                                 <?php foreach ($data['tipoDocumentacion'] as $tipoDocumentacion) { ?>
-                                                    <option value="<?php echo $tipoDocumentacion['id_tipo_documentacion'] ?>">
+                                                    <option value="<?php echo $tipoDocumentacion['id'] ?>">
                                                         <?php echo $tipoDocumentacion['nombre'] ?>
                                                     </option>
                                                 <?php } ?>

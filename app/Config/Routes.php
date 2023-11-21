@@ -46,6 +46,8 @@ $routes->post('eliminarDocumentacion', 'DocumentacionController::eliminarDocumen
 $routes->get('modificarDocumento/(:num)', 'DocumentacionController::modificarDocumentacion/$1');
 $routes->post('modificarDocumento', 'DocumentacionController::modificarDocumentacion');
 
+$routes->get('miDocumentacion/(:num)', 'DocumentacionController::miDocumentacion/$1');
+$routes->post('denunciarDocumentacion', 'DenunciaController::denunciarDocumentacion');
 
 $routes->get('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');
 $routes->post('forms/formUsuarios_admin', 'UserController::formularioUsuario_admin');

@@ -43,12 +43,17 @@ class ControladorPrincipal extends BaseController
     {
 
         $documento = new DocumentoModel();
+        $tipoDocumentacion = new TipoDocumentacionModel();
 
         $data = [
             "nombre" => $_POST['nombre'],
             "numero" => $_POST['numero'],
             "fecha_emision" => $_POST['fecha_emision'],
             "fecha_vencimiento" => $_POST['fecha_vencimiento'],
+            "id_usuario" => $_SESSION['id'],
+            "id_entidad" => $_POST['nombreEntidad'],
+            "id_estado_documentacion" => $documento->obtenerIdPorNombreEstado("Activo"),
+            "id_tipo_documentacion" => $_POST['tipoDocumentacion']
         ];
 
         if ($documento->insert($data)) {

@@ -195,7 +195,7 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
             <li class="nav-item">
                 <a class="nav-link " href=<?= base_url($_SESSION['index']) ?>>
                     <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
+                    <span>Inicio</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
@@ -207,12 +207,22 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
                 <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="<?= base_url('/forms/formDocumentacion') ?>">
-                            <i class="bi bi-circle"></i><span>Cargar nueva documentacion</span>
+                            <i class="bi bi-circle"></i><span>Cargar nueva documentación</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('miDocumentacion/'.$_SESSION['id'].'') ?>">
+                            <i class="bi bi-circle"></i><span>Mi documentación</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('listarDocumentacion/'.$_SESSION['id'].'') ?>">
+                            <i class="bi bi-circle"></i><span>Documentación del Usuario</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?= base_url('/administrarTipoDocumentacion') ?>">
-                            <i class="bi bi-circle"></i><span>Administrar tipos de documentacion</span>
+                            <i class="bi bi-circle"></i><span>Administrar tipos de documentación</span>
                         </a>
                     </li>
 
@@ -303,6 +313,7 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
         <!-- Template Main JS File -->
         <script src="<?= base_url('/assets/js/main.js') ?>"></script>
         <script src="<?= base_url('/assets/js/perfil.js') ?>"></script>
+        <script src="<?= base_url('/assets/js/documentacion.js') ?>"></script>
         <?php
         if (isset($_GET)) {
             if (isset($_GET['menu'])) {

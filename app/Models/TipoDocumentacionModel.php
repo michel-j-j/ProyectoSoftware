@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class TipoDocumentacionModel extends Model
 {
     protected $table = 'tipo_documentacion';
-    protected $primaryKey = 'id_tipo_documentacion';
+    protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 
@@ -43,9 +43,9 @@ class TipoDocumentacionModel extends Model
 
     public function obtenerIdPorNombre($tipoDocumentacionNombre)
     {
-        $idTipoDocumentacion = $this->select('id_tipo_documentacion')->getWhere(['nombre' => $tipoDocumentacionNombre])->getRow();
+        $idTipoDocumentacion = $this->select('id')->getWhere(['nombre' => $tipoDocumentacionNombre])->getRow();
         if ($idTipoDocumentacion) {
-            return $idTipoDocumentacion->id_tipo_documentacion;
+            return $idTipoDocumentacion->id;
         } else {
             return null; // O puedes lanzar una excepción u otro manejo de errores si el rol no se encuentra
         }
@@ -56,6 +56,15 @@ class TipoDocumentacionModel extends Model
         $nombre = $this->select('nombre')->getWhere(['id' => $idTipoDocumentacion])->getRow();
         if ($nombre) {
             return $nombre->nombre;
+        } else {
+            return null; // O puedes lanzar una excepción u otro manejo de errores si el rol no se encuentra
+        }
+    }
+    public function obtenerPasosPorIdTipoDocumentacion($idTipoDocumentacion)
+    {
+        $pasos = $this->select('pasos_recuperacion')->getWhere(['id' => $idTipoDocumentacion])->getRow();
+        if ($pasos) {
+            return $pasos->pasos_recuperacion;
         } else {
             return null; // O puedes lanzar una excepción u otro manejo de errores si el rol no se encuentra
         }

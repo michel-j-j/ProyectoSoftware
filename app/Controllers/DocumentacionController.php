@@ -8,14 +8,11 @@ use App\Models\EntidadesModel;
 use App\Models\UserModel;
 use App\Models\TipoDocumentacionModel;
 use App\Models\EstadoDocumentacionModel;
+use CodeIgniter\HTTP\ResponseInterface;
 use Exception;
 
 class DocumentacionController extends BaseController
 {
-    public function index(): string
-    {
-        return view('welcome_message');
-    }
 
     public function insertarDocumentacion()
     {
@@ -32,28 +29,24 @@ class DocumentacionController extends BaseController
         $idEstadoDocumentacion = $estadoDocumentacion->obtenerIdPorEstado("Activo");
 
         $data = [
-            "nombre" => $request->getPost('nombre'),
-            "numero" => $request->getPost('numero'),
-            "fecha_emision" => $request->getPost('fecha_emision'),
-            "fecha_vencimiento" => $request->getPost('fecha_vencimiento'),
-            "id_estado_documentacion" => $idEstadoDocumentacion,
-            "id_usuario" => $idUsuario,
-            "id_tipo_documentacion" => $idTipoDocumentacion,
-            "id_entidad" => $idEntidad,
-
-
+            'nombre' => $request->getPost('nombre'),
+            'numero' => $request->getPost('numero'),
+            'fecha_emision' => $request->getPost('fecha_emision'),
+            'fecha_vencimiento' => $request->getPost('fecha_vencimiento'),
+            'id_estado_documentacion' => $idEstadoDocumentacion,
+            'id_usuario' => $idUsuario,
+            'id_tipo_documentacion' => $idTipoDocumentacion,
+            'id_entidad' => $idEntidad
         ];
         try {
-            // Insertar datos en la base de datos
             $documentoModel->insert($data);
         } catch (\Exception $e) {
-            // Manejar el error, por ejemplo, loguearlo y mostrar un mensaje al usuario
+
             log_message('error', $e->getMessage());
             echo json_encode(["msg" => "Error al crear el registro"]);
         }
 
         return redirect()->to('/forms/formDocumentacion');
-
     }
 
     public function formularioDocumentacion()
@@ -143,16 +136,69 @@ class DocumentacionController extends BaseController
         ];
 
         return view('forms/editarDocumentacion', $data);
-
     }
 
-    public function eliminarDocumentacion()
+    public function eliminarDocumentacion(): ResponseInterface
     {
-        if ($_POST) {
-            $documentoModel = new DocumentoModel();
-            $documentoModel->delete($_POST['id_eliminar']);
+        $retorno = [
+            'estado' => 'error',
+            'msj'    => 'Error en el back',
+            'url'    =>  base_url('/login')
+        ];
+        var_dump($_POST);
+        try {
+            if (isset($_POST)) {
+                $documentoModel = new DocumentoModel();
+                $documentoModel->delete($_POST['id_eliminar']);
+
+                $retorno['estado'] = 'ok';
+                $retorno['msj'] = 'Se elimino la documentacion con exito!';
+            }
+            return $this->response->setJSON($retorno);
+        } catch (Exception $e) {
+            $retorno['msj'] = $e->getMessage();
+            return $this->response->setJSON($retorno);
         }
-        return redirect()->to('/forms/formDocumentacion');
+    }
+    public function miDocumentacion($id = null): String
+    {
+        $documentacionModel = new DocumentoModel();
+        $tipoDocumentacion = new TipoDocumentacionModel();
+        $tipoEntidad = new EntidadesModel();
+        $documentacion = $documentacionModel->obtenerDocumentacionPorUsuario($id);
+        $i = 0;
+
+        if ($documentacion != null) {
+            $data = ['data' => []];
+            foreach ($documentacion as $documento) {
+                if ($documentacionModel->obtenerEstadoDocumentoPorNombre("Activo") == $documento['id_estado_documentacion']) {
+                    $data['data'][$i]['id'] = $documento['id'];
+                    $data['data'][$i]['numero'] = $documento['numero'];
+                    $data['data'][$i]['fecha_vencimiento'] = $documento['fecha_vencimiento'];
+                    $data['data'][$i]['id_usuario'] = $documento['id_usuario'];
+                    $data['data'][$i]['id_entidad'] = $documento['id_entidad'];
+                    $data['data'][$i]['id_tipo_documentacion'] = $documento['id_tipo_documentacion'];
+                    $data['data'][$i]['nombre'] = $documento['nombre'];
+                    $data['data'][$i]['fecha_emision'] = $documento['fecha_emision'];
+                    $data['data'][$i]['nombreEntidad'] = $tipoEntidad->recuperarNombreEntidadPorId($documento['id_entidad']);
+                    $data['data'][$i]['nombreTipoDocumentacion'] = $tipoDocumentacion->obtenerNombrePorId($documento['id_tipo_documentacion']);
+                    //Pasos de recuperacion
+                    $data['data'][$i]['pasos_recuperacion'] = $tipoDocumentacion->obtenerPasosPorIdTipoDocumentacion($documento['id_tipo_documentacion']);
+                    $i++;
+                }
+            }
+
+            if (!empty($data['data'])) {
+                return view('seccionDocumentacion/miDocumentacion', $data);
+            } else {
+                return view('seccionDocumentacion/sinDocumentacion');
+            }
+        } else {
+            //retornar mensaje con "no hay documentacion para administrar
+            //    return view('forms/listaDocumentacionDeUsuario', $data);
+            //}
+            return view('seccionDocumentacion/sinDocumentacion');
+        }
     }
 
     public function cambiarEstadoDocumentacion()
@@ -197,11 +243,6 @@ class DocumentacionController extends BaseController
 
 
             return redirect()->to('/seleccionarUsuarioDenuncia');
-
-
         }
-
-
     }
-    
 }
