@@ -6,7 +6,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<?php if (session()->getFlashdata('success')): ?>
+<?php if (session()->getFlashdata('success')) : ?>
     <div class="alert alert-success">
         <?= session()->getFlashdata('success') ?>
     </div>
@@ -18,7 +18,7 @@
         <h1>Administrar tipos de documentacion</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href=<?= base_url($_SESSION['index']) ?>>Inicio</a></li>
                 <li class="breadcrumb-item">Documentacion</li>
                 <li class="breadcrumb-item active">Administrar tipos de documentacion</li>
             </ol>
@@ -27,12 +27,12 @@
 
     <section class="section">
         <div class="row">
-            <div class="col-lg-6">
-
-                <div class="col-lg-12">
+                <div class="col-lg-8">
                     <div class="card">
                         <div class="card-body">
-                            <h1>Listado de tipo de documento</h1>
+                          
+                            <h5 class="card-title">Listado de tipo de documento</h5>
+                            
                             <!-- Table with hoverable rows -->
                             <table class="table table-hover">
                                 <thead>
@@ -58,15 +58,12 @@
 
                                             <td scope="col">
 
-                                                <a href="<?php echo base_url('modificarTipoDocumento/') ?><?php echo $tipoDocumentacion['id']; ?>"
-                                                    class="btn btn-warning float-right">Modificar</a>
+                                                <a href="<?php echo base_url('modificarTipoDocumento/') ?><?php echo $tipoDocumentacion['id']; ?>" class="btn btn-warning float-right">Modificar</a>
 
-                                                <form action="<?= base_url('/eliminarTipoDocumentacion') ?>" method="POST"
-                                                    class="eliminarTipoDocumentacion" style="display: inline;">
-                                                    <input type="hidden" name="eliminar"
-                                                        value="<?php echo $tipoDocumentacion['id']; ?>">
-                                                    <button type="submit"
-                                                        class="btn btn-danger float-right">Eliminar</button>
+                                                <form action="<?= base_url('/eliminarTipoDocumentacion') ?>" method="POST" class="eliminarTipoDocumentacion" style="display: inline;">
+                                                    <input type="hidden" name="eliminar" value="<?php echo $tipoDocumentacion['id']; ?>">
+                                                    <hr>
+                                                    <button type="submit" class="btn btn-danger float-right">&nbsp;Eliminar&nbsp;</button>
                                                 </form>
 
                                             </td>
@@ -80,26 +77,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-
-                <div class="col-lg-6">
+                <div class="col-lg-4">
 
                     <div class="card">
                         <div class="card-body">
-
-
                             <h5 class="card-title">Agregar tipo de documento</h5>
                             <!-- Vertical Form -->
-                            <form class="row g-3" id="insertarTipoDocumentacion"
-                                action="<?= base_url('/administrarTipoDocumentacion') ?>" method="POST">
+                            <form class="row g-3" id="insertarTipoDocumentacion" action="<?= base_url('/administrarTipoDocumentacion') ?>" method="POST">
                                 <div class="col-12">
                                     <label>Tipo de documentacion</label>
-                                    <input type="text" class="form-control" id="tipoDocumentacion"
-                                        name="tipoDocumentacion" required>
+                                    <input type="text" class="form-control" id="tipoDocumentacion" name="tipoDocumentacion" required>
                                     <label>Pasos de recuperacion</label>
-                                    <textarea class="form-control" id="pasos_recuperacion" name="pasos_recuperacion"
-                                        required></textarea>
+                                    <textarea class="form-control" id="pasos_recuperacion" name="pasos_recuperacion" required></textarea>
 
 
                                     <div class="text-center">
@@ -107,14 +96,9 @@
                                         <button type="submit" class="btn btn-primary">Confirmar</button>
                                     </div>
                             </form>
-                            <!-- Vertical Form -->
-
                         </div>
                     </div>
                 </div>
-                </form>
-                <!-- Vertical Form -->
-
             </div>
     </section>
 </main>
