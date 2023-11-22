@@ -42,7 +42,7 @@ $routes->post('/recuperar/recuperarse', 'LoginController::recuperarse');
 $routes->get('forms/formDocumentacion', 'DocumentacionController::formularioDocumentacion');
 $routes->post('insertarDocumentacion', 'DocumentacionController::insertarDocumentacion');
 $routes->get('listarDocumentacion/(:num)', 'DocumentacionController::listarDocumentacion/$1');
-$routes->post('eliminarDocumentacion', 'DocumentacionController::eliminarDocumentacion');
+$routes->post('/eliminarDocumentacion', 'DocumentacionController::eliminarDocumentacion');
 $routes->get('modificarDocumento/(:num)', 'DocumentacionController::modificarDocumentacion/$1');
 $routes->post('modificarDocumento', 'DocumentacionController::modificarDocumentacion');
 
@@ -80,3 +80,11 @@ $routes->post('administrarTipoDocumentacion', 'TipoDocumentacionController::admi
 $routes->post('eliminarTipoDocumentacion', 'TipoDocumentacionController::eliminarTipoDocumentacion');
 
 $routes->get('documentacionAsociada/(:num)', 'DenunciaController::documentacionAsociada/$1');
+$routes->get('misDenuncias/(:num)', 'DenunciaController::misDenuncias/$1');
+$routes->get('selecccionarDenunciarDocumentacion/(:num)', 'DocumentacionController::selecccionarDenunciarDocumentacion/$1');
+$routes->get('listarTiposDeDocumentacion', 'TipoDocumentacionController::listarTiposDeDocumentacion');
+$routes->get('modificarTipoDocumento/(:num)', 'TipoDocumentacionController::modificarTipoDocumento/$1');
+$routes->post('modificarTipoDocumento', 'TipoDocumentacionController::modificarTipoDocumento');
+
+
+$routes->post('cancelarDenuncia', 'DenunciaController::cancelarDenuncia');

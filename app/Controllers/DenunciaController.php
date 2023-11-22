@@ -11,6 +11,8 @@ use App\Models\EstadoDenunciaModel;
 use App\Models\TipoDocumentacionModel;
 use App\Models\EntidadesModel;
 use App\Models\DenunciaDocumentacionModel;
+use CodeIgniter\HTTP\ResponseInterface;
+
 
 class DenunciaController extends BaseController
 {
@@ -151,7 +153,6 @@ class DenunciaController extends BaseController
                 } else {
                     return view('seccionDenuncias/sinDenuncias');
                 }
-
             }
             return view('seccionDenuncias/administrarDenuncias', ['denunciasActivas' => $denunciasActivas]);
         } else {
@@ -192,12 +193,11 @@ class DenunciaController extends BaseController
                 'id' => $denuncia['id'],
                 'id_usuario' => $denuncia['id_usuario'],
                 'estado' => $denunciaModel->obtenerEstadoPorId($denuncia['id_estado_denuncia']),
-                    'documentacion' => $datosDenuncia
+                'documentacion' => $datosDenuncia
             ];
             $indice++;
         }
-        var_dump($data);
-        die;
+
         return view('seccionDenuncias/listadoDenuncias', $data);
     }
 
@@ -269,4 +269,50 @@ class DenunciaController extends BaseController
         }
         return;
     }
+    public function misDenuncias($id = null): string
+    {
+        $denunciaModel = new DenunciaModel();
+        $denuncias = $denunciaModel->obtenerDenunciasPorIdUsuario($id)->getResultArray();
+        $indice = 0;
+        $data = [''];
+
+        foreach ($denuncias as $denuncia) {
+            $datosDenuncia = $denunciaModel->datosDeLaDenuncia($denuncia['id']);
+            $data['data'][$indice] = [
+                'id' => $denuncia['id'],
+                'id_usuario' => $denuncia['id_usuario'],
+                'estado' => $denunciaModel->obtenerEstadoPorId($denuncia['id_estado_denuncia']),
+                'documentacion' => $datosDenuncia
+            ];
+            $indice++;
+        }
+
+        return view('seccionDenuncias/listadoDenuncias', $data);
+    }
+
+    /*  public function cancelarDenuncia(): ResponseInterface
+    {
+        $resultado = [
+            'exito' => "ok",
+            'msj' => 'error',
+            'url' => base_url($_SESSION['index']),
+        ];
+        if ($_POST) {
+            $denunciaModel = new DenunciaModel();
+            $idCancelado = $denunciaModel->obtenerIdEstadoDenunciaPorNombre("Cancelado");
+            $data = [
+                'id_estado_denuncia' => $idCancelado
+            ];
+            if ($denunciaModel->update($_POST['cancelar_denuncia'], $data)) {
+                $resultado = [
+                    'exito' => "ok",
+                    'msj' => 'error',
+                    'url' => base_url($_SESSION['index']),
+                ];
+                return $resultado;
+            }
+        }
+        return $resultado;
+    }
+ */
 }

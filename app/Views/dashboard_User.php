@@ -5,7 +5,7 @@
 <body>
 
     <main id="main" class="main">
-        <section class="section mt-5 card">
+        <section class="section mt-5 card text-center">
             <div class="container mt-5 mb-5">
                 <div class="row mb-5">
                     <div class="jumbotron">
@@ -19,7 +19,7 @@
                     <div class="col-lg-4">
                         <h3>Gestiona tu Documentacion</h3>
                         <p>Accede de forma rapida a tus documentos en cualquier momento, en cualquier lugar.</p>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Mis Documentos</a>
+                        <a class="btn btn-primary btn-lg" href="<?= base_url('miDocumentacion/' . $_SESSION['id'] . '') ?>"role="button">Mis Documentos</a>
                     </div>
                     <div class="col-lg-4">
                         <h3>Carga tus documentos</h3>
@@ -29,7 +29,7 @@
                     <div class="col-lg-4">
                         <h3>Denuncia Rápida</h3>
                         <p>Reporta la pérdida de documentos y toma medidas de inmediato.</p>
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Denunciar documentos</a>
+                        <a class="btn btn-primary btn-lg"  href="<?= base_url('/selecccionarDenunciarDocumentacion/') ?><?php echo $_SESSION['id'] ?>"role="button">Denunciar documentos</a>
                     </div>
                 </div>
             </div>

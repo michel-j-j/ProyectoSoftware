@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    $('.eliminarEntidadForm').submit(function (e) {
+    $('.eliminarEntidadForm').click(function (e) {
         e.preventDefault();
 
         Swal.fire({

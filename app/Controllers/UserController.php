@@ -24,7 +24,7 @@ class UserController extends BaseController
                 $rolModel = new RoleModel();
                 // $rol = $rolModel->select('id')->getWhere(['rol' => $nombre_rol])->getRow();
                 $rol_id = $rolModel->obtenerIdPorNombre($nombre_rol);
-
+                
                 $data = ([
                     "nombre" => $_POST['nombre'],
                     "apellido" => $_POST['apellido'],
@@ -35,7 +35,7 @@ class UserController extends BaseController
                     "localidad" => $_POST['localidad'],
                     "direccion" => $_POST['direccion'],
                     "nacionalidad" => $_POST['nacionalidad'],
-                    "rol" => $rol_id,
+                    "id_rol" => $rol_id,
                 ]);
                 $usuario->insert($data);
             }
@@ -43,6 +43,7 @@ class UserController extends BaseController
         }
 
         //hacer view
+        
         return view('forms/form_user');
     }
 

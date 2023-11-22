@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $('#agregarDocumentacion').submit(function (e) {
         e.preventDefault();
 
@@ -13,10 +13,10 @@ $(document).ready(function(){
         }).then((result) => {
             if (result.isConfirmed) {
                 var formData = $(this).serialize();
-              
+
 
                 $.ajax({
-                    url:"cargarDoc",
+                    url: "cargarDoc",
                     method: "POST",
                     data: formData,
                     success: function (data) {
@@ -75,4 +75,7 @@ $(document).ready(function(){
             }
         });
     });
+
+
+
 });

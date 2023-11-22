@@ -1,31 +1,38 @@
 $(document).ready(function () {
-    $('#eliminarDocumentacion').click(function (e) {
+
+
+    $('.cancelarDenuncia').click(function (e) {
+        e.preventDefault();
+
         Swal.fire({
-            title: "¿Desea eliminar este documento?",
+            title: "¿Desea cancelar la denuncia ?",
             text: "¡Esta accion no podra deshacerse!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Si",
-            cancelButtonText: "No, no estoy seguro"
+            confirmButtonText: "Sí, enviar",
+            cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
-                var formData = $(this).val();
-                formData = "eliminar_id=" + formData;
+
+                var formData = $(this).serialize();
+
                 $.ajax({
-                    url: '/TrabajoFinalProyecto/public/eliminarDocumentacion', // URL de ejemplo
+                    url: "cancelarDenuncia", // destino
                     method: "POST",
                     data: formData,
                     success: function (data) {
-                        if (data.estado == 'ok') {
+                        //console.log(data);
+
+                        if (data['exito'] === 'ok') {
                             Swal.fire({
                                 icon: 'success',
                                 title: data.msj,
                                 showConfirmButton: false,
                                 timer: 1500
                             }).then((result) => {
-                                location.reload();
+                                window.location.href = data.url;
                             })
                         }
                         else {
@@ -34,6 +41,9 @@ $(document).ready(function () {
                                 title: data.msj,
                                 showConfirmButton: false,
                                 timer: 1500
+
+                            }).then((result) => {
+                                window.location.href = data.url;
                             })
                         }
 
@@ -45,14 +55,4 @@ $(document).ready(function () {
             }
         });
     });
-    $('.box').change(function (e) {
-        console.log('oka');
-          $('.box').change(function () {
-              if ($(this).is(':checked')) {
-                  $('#denunciar').prop('disabled', false);
-              } else {
-                  $('#denunciar').prop('disabled', true);
-              }
-          });
-      });
 });

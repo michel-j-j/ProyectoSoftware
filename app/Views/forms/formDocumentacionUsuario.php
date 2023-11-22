@@ -6,7 +6,7 @@
         <h1>Cargar documentacion</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href=<?=base_url($_SESSION['index'])?>>Inicio</a></li>
                 <li class="breadcrumb-item">Documentacion</li>
                 <li class="breadcrumb-item active">Cargar documentacion</li>
             </ol>

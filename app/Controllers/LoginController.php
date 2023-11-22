@@ -116,7 +116,8 @@ class LoginController extends BaseController
                 'dni'             => $dni,
                 'fecha_nacimiento' => $fecha,
                 'telefono'        => $telefono,
-                'contraseña'      => $contra
+                'contraseña'      => $contra,
+                'id_rol'          => 2
             ];
 
             if ($userModel->where('email', $email)->first()) {

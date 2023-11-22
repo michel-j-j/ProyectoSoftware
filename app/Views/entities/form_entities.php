@@ -60,7 +60,7 @@
                                     <select class="form-select" id="validationDefault04" name="id_usuario" required>
                                         <option selected disabled value="">Elegir representante</option>
                                         <?php foreach ($representantes as $representante) { ?>
-                                            <option value="<?php echo $representante['id'] ?>"><?php echo $representante['id'];
+                                            <option value="<?php echo $representante['id'] ?>"><?php 
                                                                                                 echo $representante['nombre'] ?></option>
                                         <?php } ?>
                                     </select>

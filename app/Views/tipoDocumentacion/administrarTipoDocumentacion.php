@@ -40,6 +40,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Pasos de recuperacion</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,11 +55,14 @@
                                             <td scope="col">
                                                 <?php echo $tipoDocumentacion['pasos_recuperacion'] ?>
                                             </td>
+
                                             <td scope="col">
 
-                                                <form action="<?= base_url('/eliminarTipoDocumentacion') ?>"
-                                                    method="POST" class="eliminarTipoDocumentacion"
-                                                    style="display: inline;">
+                                                <a href="<?php echo base_url('modificarTipoDocumento/') ?><?php echo $tipoDocumentacion['id']; ?>"
+                                                    class="btn btn-warning float-right">Modificar</a>
+
+                                                <form action="<?= base_url('/eliminarTipoDocumentacion') ?>" method="POST"
+                                                    class="eliminarTipoDocumentacion" style="display: inline;">
                                                     <input type="hidden" name="eliminar"
                                                         value="<?php echo $tipoDocumentacion['id']; ?>">
                                                     <button type="submit"
@@ -93,9 +97,10 @@
                                     <label>Tipo de documentacion</label>
                                     <input type="text" class="form-control" id="tipoDocumentacion"
                                         name="tipoDocumentacion" required>
-                                        <label>Pasos de recuperacion</label>
-                                        <textarea class="form-control" id="pasos_recuperacion" name="pasos_recuperacion" required></textarea>
-                                     
+                                    <label>Pasos de recuperacion</label>
+                                    <textarea class="form-control" id="pasos_recuperacion" name="pasos_recuperacion"
+                                        required></textarea>
+
 
                                     <div class="text-center">
                                         <br>

@@ -22,10 +22,8 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-144x144.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/favicon-16x16.png">
-	<link rel="manifest" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/manifest.json">
+<link rel="manifest" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/manifest.json">
+	<link href="<?= base_url('assets/img/logo.png') ?>" rel="shortcut icon">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
@@ -107,7 +105,7 @@
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
 											<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
 										</svg></span>
-									<input class="form-control" type="text" placeholder="Email" name="email">
+									<input class="form-control" type="email" placeholder="Email" name="email">
 								</div>
 								<div class="input-group mb-3">
 									<span class="input-group-text">
@@ -115,7 +113,7 @@
 									</span>
 									<input class="form-control" type="text" placeholder="Nacionalidad" name="nacionalidad">
 									<span class="input-group-text">
-									<i class="bi bi-calendar"></i>
+										<i class="bi bi-calendar"></i>
 									</span>
 									<input class="form-control" type="date" placeholder="Fecha de Nacimiento" name="fecha_nacimiento">
 								</div>

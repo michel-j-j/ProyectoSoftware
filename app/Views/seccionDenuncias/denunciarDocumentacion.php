@@ -1,4 +1,6 @@
-<?= $this->extend('layout', $datos = ['title' => 'MiDocumentacion']) ?>
+
+<?= $title = 'Denunciar Documentacion'; 
+$this->extend('layout', $title) ?>
 <?= $this->section('content') ?>
 
 <main id="main" class="main">
@@ -7,12 +9,12 @@
     <!-- TEST ID -->
 
     <div class="pagetitle">
-        <h1>Mi Documentacion</h1>
+        <h1>Denunciar Documentacion</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href=<?=base_url($_SESSION['index'])?>>Inicio</a></li>
-                <li class="breadcrumb-item">Documentacion</li>
-                <li class="breadcrumb-item active">Mi Documentacion</li>
+                <li class="breadcrumb-item"><a href=<?= base_url($_SESSION['index']) ?>>Inicio</a></li>
+                <li class="breadcrumb-item">Denuncias</li>
+                <li class="breadcrumb-item active">Denunciar Documentacion</li>
             </ol>
         </nav>
     </div>
@@ -28,42 +30,33 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Lista de documentos del usuario</h5>
                                     <!-- Table with stripped rows -->
-                                    <div
-                                        class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
+                                    <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
                                         <div class="datatable-top">
 
                                         </div>
                                         <div class="datatable-container">
-                                            <table class="table datatable datatable-table table-light" id="dataTable">
+                                            <table class="table datatable datatable-table" id="dataTable">
                                                 <thead>
                                                     <tr>
-                                                        <th data-sortable="true" style="width: 15%;"><button
-                                                                class="datatable-sorter">Entidad</button></th>
-                                                        <th data-sortable="true" style="width: 15%;"><button
-                                                                class="datatable-sorter">Tipo documentacion</button>
+                                                        <th data-sortable="true" style="width: 15%;"><button class="datatable-sorter">Entidad</button></th>
+                                                        <th data-sortable="true" style="width: 15%;"><button class="datatable-sorter">Tipo documentacion</button>
                                                         </th>
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">Fecha de emision</button></th>
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">Fecha de vencimiento</button>
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Fecha de emision</button></th>
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Fecha de vencimiento</button>
                                                         </th>
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">Nombre de tarjeta</button>
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Nombre de tarjeta</button>
                                                         </th>
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">Numero de la tarjeta</button>
-                                                        </th>
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">Editar</button>
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Numero de la tarjeta</button>
                                                         </th>
 
-                                                        <th data-sortable="true" style="width: 10%;"><button
-                                                                class="datatable-sorter">Eliminar</button>
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Pasos para la
+                                                                recuperacion</button>
                                                         </th>
 
+                                                        <th data-sortable="true" style="width: 10%;"><button class="datatable-sorter">Seleccionar</button>
+                                                        </th>
                                                 </thead>
-                                                <form class="eliminarDocumento" style="display: inline;"
-                                                    action="<?= base_url('eliminarDocumento') ?>" method="POST">
+                                                <form class="denunciarDocumentacion" style="display: inline;" action="<?= base_url('denunciarDocumentacion') ?>" method="POST">
                                                     <tbody>
                                                         <?php $index = 0 ?>
                                                         <?php foreach ($data as $documento) { ?>
@@ -87,23 +80,23 @@
                                                                 <td>
                                                                     <?php echo $documento['numero'] ?>
                                                                 </td>
+
                                                                 <td>
-                                                                    <a href="<?php echo base_url('modificarDocumento/') ?><?php echo $documento['id']; ?>"
-                                                                        class="btn btn-warning float-right">Modificar</a>
+                                                                    <?php echo $documento['pasos_recuperacion'] ?>
                                                                 </td>
 
                                                                 <td>
-                                                                    <input type="hidden" name="id_eliminar"
-                                                                        value="<?php echo $documento['id']; ?>">
-                                                                        <button type='button' id='eliminarDocumentacion' value=<?= $documento['id'] ?> class="btn btn-danger float-right">Eliminar</button>
-
+                                                                    <label>
+                                                                        <!--Selecciona el documento a denunciar, cada documento tiene un checkbox con el id del documento: documento1,documento2,documentoN-->
+                                                                        <input class="form-check-input box" type="checkbox" name="opciones[]" value="<?php echo $documento['id'] ?>">
+                                                                        Seleccionar
+                                                                    </label>
                                                                 </td>
-
                                                             </tr>
-                                                        </tbody>
-                                                        <?php $index = $index + 1; ?>
-                                                    <?php } ?>
-
+                                                    </tbody>
+                                                    <?php $index = $index + 1; ?>
+                                                <?php } ?>
+                                                <button type="submit" class="btn btn-danger" id="denunciar" disabled>Denunciar</button>
                                                 </form>
                                             </table>
                                         </div>

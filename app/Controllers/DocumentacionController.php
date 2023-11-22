@@ -126,7 +126,9 @@ class DocumentacionController extends BaseController
                 log_message('error', $e->getMessage());
                 echo json_encode(["msg" => "Error al crear el registro"]);
             }
-            return redirect()->to('/forms/formDocumentacion');
+            /////////////////////
+            return redirect()->to(base_url($_SESSION['index']));
+            /////////////////////////////////////////
         }
         $data['documentacion'] = $documentoModel->find($id);
         $data['data'] = [
@@ -145,11 +147,13 @@ class DocumentacionController extends BaseController
             'msj'    => 'Error en el back',
             'url'    =>  base_url('/login')
         ];
-        var_dump($_POST);
+
         try {
             if (isset($_POST)) {
                 $documentoModel = new DocumentoModel();
-                $documentoModel->delete($_POST['id_eliminar']);
+
+
+                $documentoModel->delete($_POST['eliminar_id']);
 
                 $retorno['estado'] = 'ok';
                 $retorno['msj'] = 'Se elimino la documentacion con exito!';
@@ -243,6 +247,46 @@ class DocumentacionController extends BaseController
 
 
             return redirect()->to('/seleccionarUsuarioDenuncia');
+        }
+    }
+    public function selecccionarDenunciarDocumentacion($id = null): string
+    {
+        $documentacionModel = new DocumentoModel();
+        $tipoDocumentacion = new TipoDocumentacionModel();
+        $tipoEntidad = new EntidadesModel();
+        $documentacion = $documentacionModel->obtenerDocumentacionPorUsuario($id);
+        $i = 0;
+
+        if ($documentacion != null) {
+            $data = ['data' => []];
+            foreach ($documentacion as $documento) {
+                if ($documentacionModel->obtenerEstadoDocumentoPorNombre("Activo") == $documento['id_estado_documentacion']) {
+                    $data['data'][$i]['id'] = $documento['id'];
+                    $data['data'][$i]['numero'] = $documento['numero'];
+                    $data['data'][$i]['fecha_vencimiento'] = $documento['fecha_vencimiento'];
+                    $data['data'][$i]['id_usuario'] = $documento['id_usuario'];
+                    $data['data'][$i]['id_entidad'] = $documento['id_entidad'];
+                    $data['data'][$i]['id_tipo_documentacion'] = $documento['id_tipo_documentacion'];
+                    $data['data'][$i]['nombre'] = $documento['nombre'];
+                    $data['data'][$i]['fecha_emision'] = $documento['fecha_emision'];
+                    $data['data'][$i]['nombreEntidad'] = $tipoEntidad->recuperarNombreEntidadPorId($documento['id_entidad']);
+                    $data['data'][$i]['nombreTipoDocumentacion'] = $tipoDocumentacion->obtenerNombrePorId($documento['id_tipo_documentacion']);
+                    //Pasos de recuperacion
+                    $data['data'][$i]['pasos_recuperacion'] = $tipoDocumentacion->obtenerPasosPorIdTipoDocumentacion($documento['id_tipo_documentacion']);
+                    $i++;
+                }
+            }
+
+            if (!empty($data['data'])) {
+                return view('seccionDenuncias/DenunciarDocumentacion', $data);
+            } else {
+                return view('seccionDenuncias/sinDenuncias');
+            }
+        } else {
+            //retornar mensaje con "no hay documentacion para administrar
+            //    return view('forms/listaDocumentacionDeUsuario', $data);
+            //}
+            return view('seccionDenuncias/sinDenuncias');
         }
     }
 }

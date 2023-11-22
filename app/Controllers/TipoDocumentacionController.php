@@ -61,4 +61,30 @@ class TipoDocumentacionController extends BaseController
 
         return $this->response->setJSON($respuesta);
     }
+
+    public function listarTiposDeDocumentacion()
+    {
+        $tipoDocumentacionModel = new TipoDocumentacionModel();
+        $data['tipoDocumentaciones'] = $tipoDocumentacionModel->findAll();
+        return view('tipoDocumentacion/listarTiposDeDocumentacion', $data);
+
+    }
+    public function modificarTipoDocumento($id = null)
+    {
+        $tipoDocumentacionModel = new TipoDocumentacionModel();
+
+        if ($_POST) {
+            $data = ([
+                "nombre" => $_POST['nombre'],
+                "pasos_recuperacion" => $_POST['pasos_recuperacion'],
+            ]);
+
+            $tipoDocumentacionModel->update($_POST['id'], $data);
+            return view('tipoDocumentacion/tipoDocumentoModificado');
+        }
+        $data['tipoDocumentacion'] = $tipoDocumentacionModel->find($id);
+        return view('tipoDocumentacion/modificarTipoDocumentacion', $data);
+    }
+
+   
 }

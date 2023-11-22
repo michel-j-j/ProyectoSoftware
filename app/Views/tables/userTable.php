@@ -7,7 +7,7 @@
         <h1>Listado de usuarios</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href=<?=base_url($_SESSION['index'])?>>Inicio</a></li>
                 <li class="breadcrumb-item">Usuarios</li>
                 <li class="breadcrumb-item active">Listado de usuarios</li>
             </ol>

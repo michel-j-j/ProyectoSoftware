@@ -22,15 +22,12 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-144x144.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/favicon-16x16.png">
 	<link rel="manifest" href="https://coreui.io/demos/bootstrap/5.0/light-v3/assets/favicon/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<!-- Vendors styles-->
+	
 	<link rel="stylesheet" href="CoreUI Bootstrap Admin Template_files/simplebar.css">
 	<link rel="stylesheet" href="CoreUI Bootstrap Admin Template_files/simplebar(1).css">
 	<!-- Main styles for this application-->
@@ -43,6 +40,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="assets/js/login.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<link href="<?= base_url('assets/img/logo.png') ?>" rel="shortcut icon">
 
 	<script>
 		(function(w, d, s, l, i) {
@@ -116,7 +114,7 @@
 					<div class="card-body text-center">
 						<div>
 							<h2>Registrarse</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>Desde aca podra registrarse, en nuestra applicacion. Problemas cuando se pierde tu documentacion? Eso ya es cosa del pasado con <strong> Perdi Mi Billetera.</strong> </p>
 							<a class="btn btn-lg btn-outline-light mt-3" type="button" href="<?php echo base_url('registrar') ?>">Registrarse</a>
 						</div>
 					</div>

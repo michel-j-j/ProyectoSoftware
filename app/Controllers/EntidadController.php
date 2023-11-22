@@ -21,7 +21,7 @@ class EntidadController extends BaseController
                 "direccion" => "required",
                 "localidad" => "required",
                 "email" => "required",
-                "telefono" => "required | min_length[10]",
+                "telefono" => "required",
             ],
             [
                 "nombre" => [
@@ -37,8 +37,7 @@ class EntidadController extends BaseController
                     "required" => "Debe ingresar un email valido"
                 ],
                 "telefono" => [
-                    "required" => "Debe ingresar un telefono valido",
-                    "min_length" => "El numero debe tener minimo 10 caracteres"
+                    "required" => "Debe ingresar un telefono valido"
                 ]
             ]
         );
