@@ -20,14 +20,14 @@ class TipoDocumentacionController extends BaseController
             ]);
             if ($tipoDocumentacionModel->insert($data)) {
                 $respuesta = [
-                    'exito' => 'ok',
+                    'estado' => 'ok',
                     'msj' => 'Nueva Entidad Creada!',
                     'url' => base_url('/listaEntidades'),
                 ];
                 return $this->response->setJSON($respuesta);
             }
             $respuesta = [
-                'exito' => 'noOk',
+                'estado' => 'noOk',
                 'msj' => 'No se pudo crear la entidad',
                 'url' => base_url('/listaEntidades'),
             ];
@@ -47,14 +47,14 @@ class TipoDocumentacionController extends BaseController
         $tipoDocumentacionModel = new TipoDocumentacionModel();
         if ($tipoDocumentacionModel->delete($_POST['eliminar'])) {
             $respuesta = [
-                'exito' => 'ok',
+                'estado' => 'ok',
                 'msj' => 'Eliminado Exitoso',
                 'url' => base_url('/listaEntidades'),
             ];
             return $this->response->setJSON($respuesta);
         }
         $respuesta = [
-            'exito' => 'noOk',
+            'estado' => 'noOk',
             'msj' => 'Error al eliminar',
             'url' => base_url('/listaEntidades'),
         ];

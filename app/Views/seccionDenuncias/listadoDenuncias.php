@@ -27,7 +27,6 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Estado de la denuncia</th>
                                 <th scope="col">Documentacion asociada</th>
-                                <th scope="col">Cancelar Denuncia</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +35,7 @@
                                 foreach ($data as $denuncia) { ?>
                                     <tr>
                                         <td scope="col">
-                                            <?php echo $denuncia['id'] ?>
+                                            <?php  echo $denuncia['id'] ?>
                                         </td>
                                         <td scope="col">
                                             <?php echo $denuncia['documentacion'][0]['nombre'] ?>
@@ -52,13 +51,6 @@
                                         </td>
                                         <td scope="col">
                                             <a href="<?php echo base_url('documentacionAsociada/') ?><?php echo $denuncia['id']; ?>" class="btn btn-warning float-right">Documentacion</a>
-                                        </td>
-                                        <td scope="col">
-                                            <form id="cancelarDenuncia"  class="cancelarDenuncia" style="display: inline;">
-                                                <input type="hidden" name="cancelar_denuncia" value="<?php echo $denuncia['id']; ?>">
-                                                <button type="submit" class="btn btn-danger float-right">Cancelar Denuncia</button>
-                                            </form>
-
                                         </td>
                                     </tr>
 

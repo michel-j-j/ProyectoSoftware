@@ -60,7 +60,7 @@
 
                                                 <a href="<?php echo base_url('modificarTipoDocumento/') ?><?php echo $tipoDocumentacion['id']; ?>" class="btn btn-warning float-right">Modificar</a>
 
-                                                <form action="<?= base_url('/eliminarTipoDocumentacion') ?>" method="POST" class="eliminarTipoDocumentacion" style="display: inline;">
+                                                <form id="eliminarTipoDocumentacion" style="display: inline;">
                                                     <input type="hidden" name="eliminar" value="<?php echo $tipoDocumentacion['id']; ?>">
                                                     <hr>
                                                     <button type="submit" class="btn btn-danger float-right">&nbsp;Eliminar&nbsp;</button>
@@ -83,7 +83,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Agregar tipo de documento</h5>
                             <!-- Vertical Form -->
-                            <form class="row g-3" id="insertarTipoDocumentacion" action="<?= base_url('/administrarTipoDocumentacion') ?>" method="POST">
+                            <form class="row g-3" id = "insertarTipoDocumentacion">
                                 <div class="col-12">
                                     <label>Tipo de documentacion</label>
                                     <input type="text" class="form-control" id="tipoDocumentacion" name="tipoDocumentacion" required>

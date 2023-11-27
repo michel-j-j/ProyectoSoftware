@@ -72,10 +72,9 @@
                                                             </td>
                                                             <td>
                                                                 <a href="<?php echo base_url('modificarDocumento/') ?><?php echo $documento['id']; ?>" class="btn btn-warning float-right">Modificar</a>
-                                                                <form class="eliminarDocumento" style="display: inline;" action="<?= base_url('eliminarDocumentacion') ?>" method="POST">
-                                                                    <input type="hidden" name="id_eliminar" value="<?php echo $documento['id']?>">
-                                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                                                                </form>
+                    
+                                                                    <button type="button" class="btn btn-danger"  id="eliminarDocumentacion" value="<?php echo $documento['id']?>">Eliminar</button>
+                                                               
                                                             </td>
                                                         </tr>
                                                     </tbody>

@@ -286,7 +286,7 @@ class DenunciaController extends BaseController
             ];
             $indice++;
         }
-
+      
         return view('seccionDenuncias/listadoDenuncias', $data);
     }
 

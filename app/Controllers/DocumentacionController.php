@@ -152,9 +152,7 @@ class DocumentacionController extends BaseController
             if (isset($_POST)) {
                 $documentoModel = new DocumentoModel();
 
-
                 $documentoModel->delete($_POST['eliminar_id']);
-
                 $retorno['estado'] = 'ok';
                 $retorno['msj'] = 'Se elimino la documentacion con exito!';
             }
@@ -174,6 +172,7 @@ class DocumentacionController extends BaseController
 
         if ($documentacion != null) {
             $data = ['data' => []];
+          
             foreach ($documentacion as $documento) {
                 if ($documentacionModel->obtenerEstadoDocumentoPorNombre("Activo") == $documento['id_estado_documentacion']) {
                     $data['data'][$i]['id'] = $documento['id'];
