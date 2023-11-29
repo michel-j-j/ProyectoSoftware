@@ -1,0 +1,258 @@
+ERROR - 2023-11-21 12:13:31 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'perdi_mi_billet...', 3306, '', 0)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-21 12:13:31 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-21 12:13:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'perdi_mi_billet...', 3306, '', 0)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-21 12:13:32 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-21 12:13:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'perdi_mi_billet...', 3306, '', 0)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-21 12:13:32 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-21 12:13:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'perdi_mi_billet...', 3306, '', 0)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-21 12:13:32 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-21 12:13:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'perdi_mi_billet...', 3306, '', 0)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-21 12:13:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-21 12:13:33 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'perdi_mi_billet...', 3306, '', 0)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\TrabajoFinalProyecto\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\TrabajoFinalProyecto\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\TrabajoFinalProyecto\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\TrabajoFinalProyecto\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\TrabajoFinalProyecto\app\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+#7 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\wamp64\www\TrabajoFinalProyecto\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\TrabajoFinalProyecto\public\index.php(81): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-11-21 12:13:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(42): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\LoginController->logear()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(81): CodeIgniter\CodeIgniter->run()
