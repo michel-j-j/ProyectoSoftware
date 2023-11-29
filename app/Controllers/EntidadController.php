@@ -53,7 +53,7 @@ class EntidadController extends BaseController
                     'msj' => $errors,
                     'url' => base_url('/nuevaEntidad'),
                 ];
-                return  $this->response->setJSON($respuesta);
+                return $this->response->setJSON($respuesta);
             } else {
                 $data = ([
 
@@ -70,14 +70,14 @@ class EntidadController extends BaseController
                         'msj' => 'Nueva Entidad Creada!',
                         'url' => base_url('/listaEntidades'),
                     ];
-                    return  $this->response->setJSON($respuesta);
+                    return $this->response->setJSON($respuesta);
                 }
                 $respuesta = [
                     'exito' => 'noOk',
                     'msj' => 'No se pudo crear la entidad',
                     'url' => base_url('/listaEntidades'),
                 ];
-                return  $this->response->setJSON($respuesta);
+                return $this->response->setJSON($respuesta);
             }
         }
         $usuarios = new UserModel();
@@ -129,7 +129,7 @@ class EntidadController extends BaseController
                 'msj' => 'Eliminado Exitoso',
                 'url' => base_url('/listaEntidades'),
             ];
-            return  $this->response->setJSON($respuesta);
+            return $this->response->setJSON($respuesta);
         }
         $respuesta = [
             'exito' => 'noOk',
@@ -150,7 +150,11 @@ class EntidadController extends BaseController
         $entidadesConEncargados = [];
 
         foreach ($entidades as $entidad) {
-            $encargado = $encargadoModel->find($entidad['id_usuario']);
+            if ($encargadoModel->find($entidad['id_usuario']) == null) {
+                $encargado['nombre'] = "Sin encargado asignado";
+            } else {
+                $encargado = $encargadoModel->find($entidad['id_usuario']);
+            }
             $entidad['encargado'] = $encargado;
             $entidadesConEncargados[] = $entidad;
         }

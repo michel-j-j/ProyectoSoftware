@@ -20,6 +20,9 @@ class EntidadesModel extends Model
     public function recuperarNombreEntidadPorId($idEntidad)
     {
         $nombreEntidad = $this->select('nombre')->getWhere(['id' => $idEntidad])->getRow();
+        if ($nombreEntidad == null){
+            return "Entidad actualmente inexistente";
+        }
         return $nombreEntidad->nombre;
     }
 }
