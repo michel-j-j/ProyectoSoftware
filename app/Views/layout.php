@@ -302,6 +302,7 @@ $user = $userModel->where('id', $_SESSION['id'])->first();
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
         <!-- Template Main JS File -->
         <script src="<?= base_url('/assets/js/main.js') ?>"></script>
+        <script src="<?= base_url('/assets/js/validarFechas.js') ?>"></script>
         <script src="<?= base_url('/assets/js/perfil.js') ?>"></script>
         <script src="<?= base_url('/assets/js/documentacion.js') ?>"></script>
 

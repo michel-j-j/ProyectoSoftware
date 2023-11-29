@@ -24,10 +24,10 @@
 
                             <!-- Vertical Form -->
                             <form class="row g-3" id="modificarDocumento"
-                                action="<?= base_url('/modificarDocumento') ?>" method="POST">
+                                action="<?= base_url('/modificarDocumento') ?>" method="POST"  onsubmit="return validarFechas()">
                                 <div class="col-12">
                                     <br>
-                                            <label for="nombre" class="form-label">Nombre de la
+                                    <label for="nombre" class="form-label">Nombre de la
                                         tarjeta/identificacion</label>
                                     <input type="text" class="form-control" id="nombre" name="nombre"
                                         value="<?php echo $data['documentacion']['nombre'] ?>">
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="col-12">
                                     <input type="hidden" class="form-control" id="id" name="id"
-                                        value="<?php echo $data['documentacion']['id']?>">
+                                        value="<?php echo $data['documentacion']['id'] ?>">
 
                                 </div>
 

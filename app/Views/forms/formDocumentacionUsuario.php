@@ -6,7 +6,7 @@
         <h1>Cargar documentacion</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href=<?=base_url($_SESSION['index'])?>>Inicio</a></li>
+                <li class="breadcrumb-item"><a href=<?= base_url($_SESSION['index']) ?>>Inicio</a></li>
                 <li class="breadcrumb-item">Documentacion</li>
                 <li class="breadcrumb-item active">Cargar documentacion</li>
             </ol>
@@ -25,9 +25,10 @@
                                     <div class="card-body mt-2">
                                         <h5 class="card-title">Agregar documentacion</h5>
                                         <!-- Vertical Form -->
-                                        <form class="row g-3" id="agregarDocumentacion">
+                                        <form class="row g-3" onsubmit="return validarFechas()"
+                                            id="agregarDocumentacion">
                                             <label for="validationDefault04" class="form-label">Entidad emisora</label>
-                                            <select class="form-select" name="nombreEntidad" required>
+                                            <select class=" form-select" name="nombreEntidad" required>
                                                 <option selected disabled value="">Seleccione entidad</option>
                                                 <?php foreach ($data['entidades'] as $entidad) { ?>
                                                     <option value="<?php echo $entidad['id'] ?>">
@@ -35,9 +36,11 @@
                                                     </option>
                                                 <?php } ?>
                                             </select>
-                                            <label for="validationDefault05" class="form-label">Tipo de documentacion</label>
+                                            <label for="validationDefault05" class="form-label">Tipo de
+                                                documentacion</label>
                                             <select class="form-select" name="tipoDocumentacion" required>
-                                                <option selected disabled value="">Seleccione tipo de documentacion</option>
+                                                <option selected disabled value="">Seleccione tipo de documentacion
+                                                </option>
                                                 <?php foreach ($data['tipoDocumentacion'] as $tipoDocumentacion) { ?>
                                                     <option value="<?php echo $tipoDocumentacion['id'] ?>">
                                                         <?php echo $tipoDocumentacion['nombre'] ?>
@@ -45,25 +48,32 @@
                                                 <?php } ?>
                                             </select>
                                             <div class="col-12">
-                                                <label for="nombre" class="form-label">Nombre de la tarjeta/identificacion</label>
-                                                <input type="text" class="form-control" name="nombre" placeholder="Ej: Lemon, Banco P.">
+                                                <label for="nombre" class="form-label">Nombre de la
+                                                    tarjeta/identificacion</label>
+                                                <input type="text" class="form-control" name="nombre"
+                                                    placeholder="Ej: Lemon, Banco P.">
                                             </div>
                                             <div class="col-12">
-                                                <label for="numero" class="form-label">Numero de tarjeta/dni/ID</label>
-                                                <input type="text" class="form-control" name="numero" placeholder="xxxx-xxxx-xxxx-xxxx">
+                                                <label for="numero" class="form-label">Numero de
+                                                    tarjeta/dni/ID</label>
+                                                <input type="text" class="form-control" name="numero"
+                                                    placeholder="xxxx-xxxx-xxxx-xxxx">
                                             </div>
                                             <div class="col-12">
                                                 <label for="fecha_emision" class="form-label">Fecha emision</label>
                                                 <input type="date" class="form-control" name="fecha_emision">
                                             </div>
                                             <div class="col-12">
-                                                <label for="fecha_vencimiento" class="form-label">Fecha vencimiento</label>
+                                                <label for="fecha_vencimiento" class="form-label">Fecha
+                                                    vencimiento</label>
                                                 <input type="date" class="form-control" name="fecha_vencimiento">
                                             </div>
                                             <input type="hidden" name="id_usuario" value="<?= $_SESSION['id'] ?> ">
                                             <div class="text-center">
-                                                <a href="<?php echo base_url('/dashboard/user') ?> "> <button type="button" class="btn btn-danger">Volver</button></a>
-                                                <button type="reset" class="btn btn-warning">Reiniciar campos</button>
+                                                <a href="<?php echo base_url('/dashboard/user') ?> "> <button
+                                                        type="button" class="btn btn-danger">Volver</button></a>
+                                                <button type="reset" class="btn btn-warning">Reiniciar
+                                                    campos</button>
                                                 <button type="submit" class="btn btn-primary">Confirmar</button>
                                             </div>
                                         </form>
@@ -82,7 +92,9 @@
 </main><!-- End #main -->
 
 </main><!-- End #main -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src=" <?= base_url('/assets/js/user_cargarDocs.js') ?>">
 </script>
